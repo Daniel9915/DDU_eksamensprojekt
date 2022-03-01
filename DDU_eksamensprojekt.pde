@@ -3,6 +3,7 @@ PImage ghostImg;
 PImage pumpkinImg;
 
 void setup(){
+  imageMode(CENTER);
   size(1200,800);
   ghostImg = loadImage("data/ghost.png");
   pumpkinImg = loadImage("data/pumpkin.png"); 
@@ -10,7 +11,16 @@ void setup(){
 }
 
 void draw(){
+  clear();
   game.run();
+  
+  textSize(24);
+  if(game.PumpkinGhost.get(0).isGhost){
+    text("Ghost  -  Change with 't'",20,20);
+  }else{
+    text("Pumpkin  -  Change with 't'",20,20);
+  }
+  
 }
 
 void keyPressed(){

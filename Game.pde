@@ -1,8 +1,7 @@
 class Game {
-  float playerX, playerY;
   boolean running; //Game running when it's not in menu
   ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
-  Coords location = new Coords(40,40);
+  Coords location = new Coords(400,300);
   Game() {
   }
 
@@ -14,6 +13,7 @@ class Game {
   void run() {
     for (Player pg : PumpkinGhost) {
       pg.display();
+      pg.update();
     }
   }
 
@@ -21,11 +21,20 @@ class Game {
     for (Player pg : PumpkinGhost) {
       pg.keyPressed();
     }
+    if(key == 't'){
+      changeStance();
+    }
   }
 
   void keyReleased() {
     for (Player pg : PumpkinGhost) {
       pg.keyReleased();
+    }
+  }
+  
+  void changeStance(){
+    for(Player pg: PumpkinGhost){
+      pg.isGhost = !pg.isGhost;
     }
   }
 }

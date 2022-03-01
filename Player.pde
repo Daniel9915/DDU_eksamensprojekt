@@ -5,6 +5,8 @@ class Player{
   float maxMoveDistance = 0; //max distance som spøgelse kan gå fra græskar
   Ghost ghost;
   Pumpkin pumpkin;
+  Coords pLoc;
+  Coords gLoc;
   
   void update(){
   }
@@ -16,6 +18,9 @@ class Player{
   }
   
   void resetCharater(){
+  }
+  
+  void enterPumpkin(){
   }
   
   //Keyboard registrations
