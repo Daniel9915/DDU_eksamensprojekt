@@ -1,4 +1,5 @@
 Game game = new Game();
+ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
 PImage ghostImg;
 PImage pumpkinImg;
 
@@ -15,7 +16,7 @@ void draw(){
   game.run();
   
   textSize(24);
-  if(game.PumpkinGhost.get(0).isGhost){
+  if(PumpkinGhost.get(0).isGhost){
     text("Ghost  -  Change with 't'",20,20);
   }else{
     text("Pumpkin  -  Change with 't'",20,20);
