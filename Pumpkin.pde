@@ -1,6 +1,7 @@
 class Pumpkin extends Player {
   float w;
   float speed = 1.5;
+  
   Pumpkin(Coords _loc, float _w) {
     pLoc = new Coords(_loc.x, _loc.y);
     w = _w;

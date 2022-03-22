@@ -10,7 +10,7 @@ class Ghost extends Player {
   }
 
   void display() {
-    circle(buttomLoc.x,buttomLoc.y,20);
+    circle(buttomLoc.x, buttomLoc.y, 20);
     image(ghostImg, gLoc.x, gLoc.y, w, w);
   }
 
@@ -46,12 +46,12 @@ class Ghost extends Player {
       gLoc.y += velocity.y;
       velocity.mult(-0.8);
     }
-    
-    if(dist(buttomLoc.x,buttomLoc.y,gLoc.x,gLoc.y)>5){
+
+    if (dist(buttomLoc.x, buttomLoc.y, gLoc.x, gLoc.y)>5) {
       buttomLoc.x += (gLoc.x-buttomLoc.x)/3;
       buttomLoc.y += (gLoc.y+20-buttomLoc.y)/3;
     }
-    
+
     velocity.mult(0.95);
     velocity.limit(4);
     gLoc.x -= velocity.x;
