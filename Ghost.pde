@@ -25,6 +25,8 @@ class Ghost extends Player {
     if (!isGhost) {
       gLoc.x = PumpkinGhost.get(1).pLoc.x;
       gLoc.y = PumpkinGhost.get(1).pLoc.y;
+      buttomLoc.x = gLoc.x;
+      buttomLoc.y = gLoc.y+20;
     }
   }
 
