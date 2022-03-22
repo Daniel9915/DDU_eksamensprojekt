@@ -2,6 +2,7 @@ class Ghost extends Player {
   float w;
   float speed = 2;
   PVector velocity = new PVector(0, 0);
+  
   Ghost(Coords _loc, float _w) {
     gLoc = new Coords(_loc.x, _loc.y);
     w = _w;

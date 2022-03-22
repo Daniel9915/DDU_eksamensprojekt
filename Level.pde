@@ -1,7 +1,7 @@
 class Level {
   /*
   Data:
-  ARraylist med player
+  ARse raylist med player
   Arraylist med items
   
   */

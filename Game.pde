@@ -1,6 +1,7 @@
 class Game {
   boolean running; //Game running when it's not in menu
   Coords location = new Coords(400,300);
+  
   Game() {
   }
 
