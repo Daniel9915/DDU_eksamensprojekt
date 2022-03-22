@@ -1,6 +1,7 @@
 //Item - Overklasse til ting som spøgelset kan interagere med
 class Item {
   float x, y, w, h;
+  float angle = 0;
   PImage image;
   
   Item(float _x, float _y, float _w, float _h, PImage _image) {
@@ -12,7 +13,7 @@ class Item {
   }
 
   void display() {
-    image(image, x, y, w, h);
+    image(image,0,h/2, w, h);
   }
 
   void pickUp(boolean pickedUp) {
