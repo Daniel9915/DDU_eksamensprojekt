@@ -2,12 +2,15 @@ class Ghost extends Player {
   float w;
   float speed = 2;
   PVector velocity = new PVector(0, 0);
+  Coords buttomLoc;
   Ghost(Coords _loc, float _w) {
     gLoc = new Coords(_loc.x, _loc.y);
+    buttomLoc = new Coords(_loc.x, _loc.y+20);
     w = _w;
   }
 
   void display() {
+    circle(buttomLoc.x,buttomLoc.y,20);
     image(ghostImg, gLoc.x, gLoc.y, w, w);
   }
 
@@ -43,6 +46,12 @@ class Ghost extends Player {
       gLoc.y += velocity.y;
       velocity.mult(-0.8);
     }
+    
+    if(dist(buttomLoc.x,buttomLoc.y,gLoc.x,gLoc.y)>5){
+      buttomLoc.x += (gLoc.x-buttomLoc.x)/3;
+      buttomLoc.y += (gLoc.y+20-buttomLoc.y)/3;
+    }
+    
     velocity.mult(0.95);
     velocity.limit(4);
     gLoc.x -= velocity.x;
