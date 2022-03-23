@@ -2,11 +2,11 @@
 class Item {
   float x, y, w, h;
   float angle = 0;
-  float weight = 1.1;
-  PVector acceleration = new PVector(0,1);
+  float weight = 1.08;
+  PVector acceleration = new PVector(0, 1);
   PImage image;
   boolean picekedUp = false;
-  
+
   Item(float _x, float _y, float _w, float _h, PImage _image) {
     x = _x;
     y = _y;
@@ -16,27 +16,24 @@ class Item {
   }
 
   void display() {
-    image(image,0,h/2, w, h);
-    if(picekedUp){
+    image(image, 0, h/2, w, h);
+    if (picekedUp) {
       acceleration.y *= weight;
       y+=acceleration.y;
     }
-  }
-
-  void pickUp(boolean holding) {
-    picekedUp = true;
-    if(holding){
-      x = PumpkinGhost.get(0).gLoc.x;
-      y = PumpkinGhost.get(0).gLoc.y;
-    }else{
-      acceleration.y*=weight;
-      y+=acceleration.y;
+    if (picekedUp && mousePressed && acceleration.y < 1.5) {
+      pickUp();
     }
   }
-  
-  void throwItem(){
-    acceleration.set(5,-5);
+
+  void pickUp() {
+    picekedUp = true;
+    x = PumpkinGhost.get(0).gLoc.x;
+    y = PumpkinGhost.get(0).gLoc.y;
+    acceleration.y = 1;
   }
-  
-  
+
+  void throwItem() {
+    acceleration.set(5, -5);
+  }
 }

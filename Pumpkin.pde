@@ -13,7 +13,7 @@ class Pumpkin extends Player {
     push();
     noFill();
     strokeWeight(2);
-    stroke(255, 140, 0, dist(PumpkinGhost.get(0).gLoc.x, PumpkinGhost.get(0).gLoc.y, pLoc.x, pLoc.y));
+    stroke(255, 140, 0, (dist(PumpkinGhost.get(0).gLoc.x, PumpkinGhost.get(0).gLoc.y, pLoc.x, pLoc.y))/2);
     ellipseMode(CENTER);
     ellipse(pLoc.x, pLoc.y, maxMoveDistance*2, maxMoveDistance*2);
     pop();

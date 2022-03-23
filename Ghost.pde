@@ -20,10 +20,13 @@ class Ghost extends Player {
     }
     enterPumpkin();
 
-    for (Item i : ItemList) {
-      if (dist(i.x, i.y, gLoc.x, gLoc.y) < 50 && mousePressed) {
+    for (Item i : ItemList) { // tjekker om spøgelset er tæt på et opjekt og om man højre- eller venstre-klikker.
+      if (dist(i.x, i.y, gLoc.x, gLoc.y) < 50) {
         if (abs(mouseX-i.x)<i.w && abs(mouseY-i.y)<i.h) {
-          i.pickUp(true);
+          if (mousePressed && (mouseButton == LEFT)) {
+            i.pickUp();
+          } else if (mousePressed && (mouseButton == RIGHT))
+            i.throwItem();
         }
       }
     }
