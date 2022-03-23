@@ -2,8 +2,9 @@
 class Item {
   float x, y, w, h;
   float angle = 0;
-  float weight = 1.08;
+  float weight = 1.01;
   PVector acceleration = new PVector(0, 1);
+  PVector velocity = new PVector(0, 0);
   PImage image;
   boolean picekedUp = false;
 
@@ -19,9 +20,11 @@ class Item {
     image(image, 0, h/2, w, h);
     if (picekedUp) {
       acceleration.y *= weight;
-      y+=acceleration.y;
+      velocity.add(acceleration);
+      y+=velocity.y;
+      x+=velocity.x;
     }
-    if (picekedUp && mousePressed && acceleration.y < 1.5) {
+    if (picekedUp && mousePressed && (mouseButton == LEFT) && velocity.y < 1.5) {
       pickUp();
     }
   }
@@ -31,9 +34,11 @@ class Item {
     x = PumpkinGhost.get(0).gLoc.x;
     y = PumpkinGhost.get(0).gLoc.y;
     acceleration.y = 1;
+    velocity.y = 0;
   }
 
   void throwItem() {
-    acceleration.set(5, -5);
+    picekedUp = true;
+    velocity.set(10, -10);
   }
 }
