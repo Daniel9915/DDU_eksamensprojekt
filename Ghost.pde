@@ -19,6 +19,14 @@ class Ghost extends Player {
       move();
     }
     enterPumpkin();
+
+    for (Item i : ItemList) {
+      if (dist(i.x, i.y, gLoc.x, gLoc.y) < 50 && mousePressed) {
+        if (abs(mouseX-i.x)<i.w && abs(mouseY-i.y)<i.h) {
+          i.pickUp(true);
+        }
+      }
+    }
   }
 
   void enterPumpkin() {

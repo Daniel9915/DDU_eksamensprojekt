@@ -15,6 +15,10 @@ class Game {
       pg.display();
       pg.update();
     }
+    for (Item i : ItemList) {
+      i.display();
+    }
+    
   }
 
   void keyPressed() {
