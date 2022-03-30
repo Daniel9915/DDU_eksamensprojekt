@@ -3,18 +3,18 @@ ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
 ArrayList<Item> ItemList = new ArrayList<Item>();
 PImage ghostImg;
 PImage pumpkinImg;
-PImage chandelie;
+PImage chandelier;
+
 
 Chandelier chan;
 
 void setup(){
   imageMode(CENTER);
   size(1200,800);
-  ghostImg = loadImage("data/ghost.png");
-  pumpkinImg = loadImage("data/pumpkin.png"); 
-  chandelie = loadImage("chandelier.png");
+  loadData();
   game.startUp();
-  ItemList.add(new Chandelier(500,100,50,60,chandelie));
+  
+  ItemList.add(new Chandelier(500,100,50,60,chandelier));
 
 }
 
@@ -29,6 +29,12 @@ void draw(){
     text("Pumpkin  -  Change with 't'",20,20);
   }
     
+}
+
+void loadData(){
+  ghostImg = loadImage("data/ghost.png");
+  pumpkinImg = loadImage("data/pumpkin.png"); 
+  chandelier = loadImage("chandelier.png");
 }
 
 void keyPressed(){
