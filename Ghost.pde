@@ -26,7 +26,7 @@ class Ghost extends Player {
           if (mousePressed && (mouseButton == LEFT)) {
             i.pickUp();
           } else if (mousePressed && (mouseButton == RIGHT)) {
-            i.throwItem();
+            i.Interact();
           }
         }
       }

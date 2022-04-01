@@ -3,7 +3,7 @@ ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
 ArrayList<Item> ItemList = new ArrayList<Item>();
 PImage ghostImg;
 PImage pumpkinImg;
-PImage chandelie;
+PImage chandelier;
 
 Chandelier chan;
 
@@ -12,9 +12,9 @@ void setup(){
   size(1200,800);
   ghostImg = loadImage("data/ghost.png");
   pumpkinImg = loadImage("data/pumpkin.png"); 
-  chandelie = loadImage("chandelier.png");
+  chandelier = loadImage("chandelier.png");
   game.startUp();
-  ItemList.add(new Chandelier(500,100,50,60,chandelie));
+  ItemList.add(new Chandelier(500,100,50,60,chandelier));
 
 }
 

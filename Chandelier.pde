@@ -23,7 +23,7 @@ class Chandelier extends Item {
     }
   }
 
-  void throwItem() {
+  void Interact() {
     angleAdder = 0.1;
   }
 }
