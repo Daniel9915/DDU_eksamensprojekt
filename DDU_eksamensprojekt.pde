@@ -5,6 +5,8 @@ PImage ghostImg;
 PImage pumpkinImg;
 PImage chandelier;
 
+int scene = 1;
+
 
 Chandelier chan;
 
@@ -24,15 +26,11 @@ void setup(){
 
 void draw(){
   clear();
-  game.run();
-  
-  textSize(24);
-  if(PumpkinGhost.get(0).isGhost){
-    text("Ghost  -  Change with 't'",20,20);
-  }else{
-    text("Pumpkin  -  Change with 't'",20,20);
-  }
-    
+  switch(scene){
+    case 1:
+      game.run();
+      break;
+  } 
 }
 
 void loadData(){
