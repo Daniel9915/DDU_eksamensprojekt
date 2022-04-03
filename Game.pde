@@ -7,7 +7,7 @@ class Game {
 
   void startUp() {
     PumpkinGhost.add(new Ghost(location, 40));
-    PumpkinGhost.add(new Pumpkin(location, 40));
+    PumpkinGhost.add(new Pumpkin(location, 70));
   }
 
   void run() {

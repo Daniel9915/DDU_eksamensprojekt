@@ -27,9 +27,17 @@ void setup(){
 void draw(){
   clear();
   switch(scene){
+    case 0:
+      menuDraw();
+      break;
+    
     case 1:
       game.run();
       break;
+    
+    case 2:
+      //level designer
+    
   } 
 }
 
