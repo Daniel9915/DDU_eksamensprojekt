@@ -18,6 +18,7 @@ void setup() {
   frameRate(60);
   loadData();
   game.startUp();
+  
 }
 
 void draw() {
@@ -36,7 +37,8 @@ void draw() {
   }
 }
 
-void loadData() {
+
+void loadData(){
   ghostImg = loadImage("data/images/ghost.png");
   pumpkinImg = loadImage("data/images/pumpkin.png"); 
   chandelier = loadImage("data/images/chandelier.png");
