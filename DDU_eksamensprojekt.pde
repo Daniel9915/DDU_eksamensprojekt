@@ -8,7 +8,6 @@ PImage humanImg;
 
 int scene = 1;
 
-
 Chandelier chan;
 
 void setup(){
