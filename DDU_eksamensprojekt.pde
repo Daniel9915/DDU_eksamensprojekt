@@ -4,6 +4,7 @@ ArrayList<Item> ItemList = new ArrayList<Item>();
 PImage ghostImg;
 PImage pumpkinImg;
 PImage chandelier;
+PImage humanImg;
 
 int scene = 1;
 
@@ -13,9 +14,10 @@ Chandelier chan;
 void setup(){
   imageMode(CENTER);
   size(1200,800);
+  frameRate(60);
   loadData();
   game.startUp(); 
-  ItemList.add(new Chandelier(500,100,50,60,chandelier));
+  
 }
 
 void draw(){
@@ -39,6 +41,7 @@ void loadData(){
   ghostImg = loadImage("data/images/ghost.png");
   pumpkinImg = loadImage("data/images/pumpkin.png"); 
   chandelier = loadImage("data/images/chandelier.png");
+  humanImg = loadImage("data/images/human.png");
 }
 
 void keyPressed(){
