@@ -3,6 +3,9 @@ class Chandelier extends Item {
   Chandelier(float _x, float _y, float _w, float _h, PImage _image) {
     super(_x, _y, _w, _h, _image);
   }
+  Chandelier(float _x, float _y) {
+    super(_x, _y, 50, 60, chandelier);
+  }
 
   void display() {
     push();
