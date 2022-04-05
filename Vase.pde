@@ -1,7 +1,16 @@
-class Vase extends Item{
+class Vase extends Item {
 
   Vase(float _x, float _y, float _w, float _h, PImage _image) {
-    super(_x,_y,_w,_h,_image);
+    super(_x, _y, _w, _h, _image);
   }
-  
+  Vase(float _x, float _y) {
+    super(_x, _y, 50, 50, noImg);
+  }
+
+  void display() {
+    push();
+    translate(x, y-h/2);
+    super.display();
+    pop();
+  }
 }
