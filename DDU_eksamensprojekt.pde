@@ -1,3 +1,6 @@
+import de.bezier.data.sql.*;
+
+SQLite Data;
 Game game = new Game();
 ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
 ArrayList<Item> ItemList = new ArrayList<Item>();
@@ -7,7 +10,7 @@ PImage chandelier;
 PImage humanImg;
 PImage noImg;
 
-int scene = 2;
+int scene = 1;
 
 
 Chandelier chan;
@@ -39,6 +42,7 @@ void draw() {
 
 
 void loadData(){
+  Data = new SQLite( this, "Levels.sqlite" );
   ghostImg = loadImage("data/images/ghost.png");
   pumpkinImg = loadImage("data/images/pumpkin.png"); 
   chandelier = loadImage("data/images/chandelier.png");

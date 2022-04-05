@@ -2,6 +2,7 @@ ArrayList<Item> allItems = new ArrayList<Item>();
 ArrayList<Item> levelItems = new ArrayList<Item>();
 int frame = 0;
 int item = 0;
+int currentLevelEdit = 1;
 
 void levelDesignDraw() {
 
@@ -27,10 +28,15 @@ void addNew() {
   } else if (allItems.get(item) instanceof Vase) {
     levelItems.add(new Vase(mouseX, mouseY));
   }
+  if ( Data.connect() ) {
+    Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
+    String sql = "INSERT INTO Level( ClassIndex, X, Y, LevelIndex)VALUES ('" + item + "', '" + mouseX + "', '" + mouseY + "', '" + currentLevelEdit + "');";
+    Data.execute(sql);
+  }
 }
 
 void levelDesignKeys() {
-  switch(key) {
+  switch(key) {    
   case '0':
     item = 0;
     break;
@@ -40,6 +46,9 @@ void levelDesignKeys() {
   case '2':
     item = 2;
     break;
+  }
+
+  if (keyCode == ENTER) {
   }
 }
 
