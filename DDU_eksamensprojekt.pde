@@ -13,7 +13,6 @@ PImage BG;
 
 int scene = 1;
 
-
 Chandelier chan;
 
 void setup() {
