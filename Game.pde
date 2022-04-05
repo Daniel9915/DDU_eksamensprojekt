@@ -14,6 +14,8 @@ class Game {
   }
 
   void run() {
+    image(BG,width/2,height/2);
+    
     makeText();
 
     for (Player pg : PumpkinGhost) {
