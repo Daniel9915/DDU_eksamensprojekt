@@ -61,6 +61,8 @@ void levelDesignKeys() {
   }
 
   if (keyCode == ENTER) {
+    currentLevelEdit++;
+    loadLevel();
   }
 }
 
