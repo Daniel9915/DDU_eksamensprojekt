@@ -11,12 +11,14 @@ PImage humanImg;
 PImage noImg;
 PImage BG;
 
-int scene = 1;
+int scene = 0;
 
 Chandelier chan;
 
 void setup() {
   imageMode(CENTER);
+  rectMode(CENTER);
+  textAlign(CENTER);
   size(1200, 800);
   frameRate(60);
   loadData();
