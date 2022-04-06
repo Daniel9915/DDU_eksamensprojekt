@@ -9,6 +9,7 @@ PImage pumpkinImg;
 PImage chandelier;
 PImage humanImg;
 PImage noImg;
+PImage BG;
 
 int scene = 1;
 
@@ -47,6 +48,8 @@ void loadData(){
   chandelier = loadImage("data/images/chandelier.png");
   humanImg = loadImage("data/images/human.png");
   noImg = loadImage("data/images/noImg.png");
+  BG = loadImage("data/images/Background.png");
+
   addAllItems();
 }
 
