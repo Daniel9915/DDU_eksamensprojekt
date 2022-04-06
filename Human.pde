@@ -9,9 +9,12 @@ class Human{
   boolean hasDetectedPumpkin = false;
   
   boolean left = false;
-  //0 to 100
-  float scaredCounter = 0;
+  float scaredCounter = 0;  //0 to 100
   float wait = 0;
+  
+  float attackRange = 40;
+  boolean isInAttackRange = false;
+  float runSpeed = 2;
   
   Human(float _x, float _y, float _w, float _h, float _leftWalk, float _rightWalk, float _viewDistance, float _speed, PImage _humanImg){
     x = _x;
@@ -30,13 +33,15 @@ class Human{
   }
   
   void update(){
-    walk();
+    move();
     detect();
-    showVision();
+    showRange();
   }
   
   void attack(){
-  
+    if(isInAttackRange){
+    
+    }
   }
   
   void detect(){
@@ -49,9 +54,14 @@ class Human{
         }
       }
     }
+    if(hasDetectedPumpkin){
+      if(PumpkinGhost.get(1).pLoc.x > x-attackRange && PumpkinGhost.get(1).pLoc.x < x+attackRange){
+        isInAttackRange = true;
+      }
+    }
   }
   
-  void showVision(){
+  void showRange(){
     push();
     rectMode(CENTER);
     if(hasDetectedPumpkin){
@@ -61,7 +71,25 @@ class Human{
     }
     rect(x-viewDistance,y,5,50);
     rect(x+viewDistance,y,5,50);
+    
+    if(isInAttackRange){
+      fill(255,0,0);
+    }else{
+      fill(0,255,0);
+    }
+    rect(x-attackRange,y,5,50);
+    rect(x+attackRange,y,5,50);
+    
     pop();
+  }
+  
+  void move(){
+    if(!hasDetectedPumpkin){
+      walk();
+    }else{
+      run();
+    }
+  
   }
   
   void walk(){
@@ -87,6 +115,13 @@ class Human{
         wait--;
       }
     }
+  }
   
+  void run(){
+    if(PumpkinGhost.get(1).pLoc.x < x){
+      x-=runSpeed;
+    }else if(PumpkinGhost.get(1).pLoc.x > x){
+      x+=runSpeed;
+    }
   }
 }
