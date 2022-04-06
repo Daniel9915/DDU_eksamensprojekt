@@ -16,7 +16,19 @@ void levelDesignDraw() {
 
   if (mousePressed && frame < frameCount) {
     frame = frameCount+30;
-    addNew();
+    if (mouseButton == LEFT) {
+      addNew();
+    } else if (mouseButton == RIGHT) {
+      for (Item i : levelItems) {
+        if (dist(i.x, i.y, mouseX, mouseY)<25) {
+          //String sql = "DELETE FROM Level WHERE X='"+ int(i.x) + "', Y='"+ int(i.y)+"';"; dette fungerede ikke af en eller anden grund
+          String sql="DELETE FROM Level WHERE X=" + i.x +";";
+          Data.execute(sql);
+          levelItems.remove(i);
+          break;
+        }
+      }
+    }
   }
 }
 
@@ -56,4 +68,22 @@ void addAllItems() {
   allItems.add(new Chandelier(0, 0));
   allItems.add(new Tv(0, 0));
   allItems.add(new Vase(0, 0));
+}
+
+void loadLevel() {
+  if ( Data.connect() ) {
+    Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
+    levelItems.clear();
+    while (Data.next()) {
+      if (Data.getInt("LevelIndex")==currentLevelEdit) {
+        if (Data.getInt("ClassIndex")==0) {
+          levelItems.add(new Chandelier(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==1) {
+          levelItems.add(new Tv(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==2) {
+          levelItems.add(new Vase(Data.getInt("X"), Data.getInt("Y")));
+        }
+      }
+    }
+  }
 }

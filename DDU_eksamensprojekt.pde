@@ -11,7 +11,7 @@ PImage humanImg;
 PImage noImg;
 PImage BG;
 
-int scene = 1;
+int scene = 2;
 
 Chandelier chan;
 
@@ -21,6 +21,7 @@ void setup() {
   frameRate(60);
   loadData();
   game.startUp();
+  loadLevel();
   
 }
 
