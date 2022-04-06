@@ -1,7 +1,8 @@
 //Spilleren, spøgelse/græskar 
 class Player{
   boolean isGhost = false;  //skifter mellem spøgelse og græskar
-  boolean up, down, left, right;
+  boolean left, right;
+  boolean isMoving = false;
   float maxMoveDistance = 200; //max distance som spøgelse kan gå fra græskar
   Ghost ghost;
   Pumpkin pumpkin;

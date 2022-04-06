@@ -8,7 +8,6 @@ class Human{
   PImage humanImg;
   boolean hasDetectedPumpkin = false;
   
-  
   boolean left = false;
   //0 to 100
   float scaredCounter = 0;
@@ -36,12 +35,17 @@ class Human{
     showVision();
   }
   
+  void attack(){
+  
+  }
   
   void detect(){
     if(PumpkinGhost.get(1).pLoc.x > x-viewDistance && PumpkinGhost.get(1).pLoc.x < x+viewDistance){
       if(PumpkinGhost.get(1).isGhost == false){
-        if(scaredCounter != 100){
-          hasDetectedPumpkin = true;
+        if(PumpkinGhost.get(1).isMoving == true){
+          if(scaredCounter != 100){
+            hasDetectedPumpkin = true;
+          }
         }
       }
     }

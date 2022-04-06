@@ -11,7 +11,7 @@ PImage humanImg;
 PImage noImg;
 PImage BG;
 
-int scene = 2;
+int scene = 1;
 
 Chandelier chan;
 
@@ -49,7 +49,7 @@ void loadData(){
   chandelier = loadImage("data/images/chandelier.png");
   humanImg = loadImage("data/images/human.png");
   noImg = loadImage("data/images/noImg.png");
-  BG = loadImage("data/images/Background.png");
+  BG = loadImage("data/images/BackgroundLowerQual.png");
 
   addAllItems();
 }
