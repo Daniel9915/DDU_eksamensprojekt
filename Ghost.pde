@@ -11,10 +11,15 @@ class Ghost extends Player {
 
   void display() {
     circle(buttomLoc.x, buttomLoc.y, 20);
-    image(ghostImg, gLoc.x, gLoc.y, w, w);
+    image(ghostImg, gLoc.x, gLoc.y, w, w*1.5);
   }
 
   void update() {
+    
+    if(velocity.x<-0.1){
+      //flipper billedet
+    }
+    
     if (isGhost) {
       move();
     }
