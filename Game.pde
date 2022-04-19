@@ -2,7 +2,7 @@ class Game {
   boolean running; //Game running when it's not in menu
   Coords location = new Coords(200, 700);
   ArrayList<Human> humanList = new ArrayList<Human>();
-  
+  boolean gameOver = false;
   Game() {
   }
 

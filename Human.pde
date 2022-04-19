@@ -1,4 +1,4 @@
-class Human{
+class Human extends Game{
   float x,y;
   float w,h;
   //The coordinate it walks left and right before switching
@@ -36,11 +36,14 @@ class Human{
     move();
     detect();
     showRange();
+    if(hasDetectedPumpkin){
+      attack();
+    }
   }
   
   void attack(){
     if(isInAttackRange){
-    
+      gameOver = true;
     }
   }
   
@@ -118,9 +121,9 @@ class Human{
   }
   
   void run(){
-    if(PumpkinGhost.get(1).pLoc.x < x){
+    if(PumpkinGhost.get(1).pLoc.x < x-5){
       x-=runSpeed;
-    }else if(PumpkinGhost.get(1).pLoc.x > x){
+    }else if(PumpkinGhost.get(1).pLoc.x > x+5){
       x+=runSpeed;
     }
   }
