@@ -10,7 +10,7 @@ class Human extends Game{
   
   boolean left = false;
   float scaredCounter = 0;  //0 to 100
-  float wait = 0;
+  float waitTime = 0;
   
   float attackRange = 40;
   boolean isInAttackRange = false;
@@ -97,25 +97,25 @@ class Human extends Game{
   
   void walk(){
     if(left){
-      if(wait<0){
+      if(waitTime<0){
         x-= speed;
         if(x<leftWalk){
           left = false;
-          wait = 240;
+          waitTime = 240;
         }
       }else{
-        wait--;
+        waitTime--;
       }
     }
     if(!left){
-      if(wait<0){
+      if(waitTime<0){
         x+= speed;
         if(x>rightWalk){
           left = true;
-          wait = 240;
+          waitTime = 240;
         }
       }else{
-        wait--;
+        waitTime--;
       }
     }
   }

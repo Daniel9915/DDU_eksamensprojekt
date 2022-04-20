@@ -1,33 +1,47 @@
 class Game {
-  boolean running; //Game running when it's not in menu
+  boolean gameRunning = false; //Game running when it's not in menu
   Coords location = new Coords(200, 700);
   ArrayList<Human> humanList = new ArrayList<Human>();
-  boolean gameOver = false;
   Game() {
   }
 
   void startUp() {
     PumpkinGhost.add(new Ghost(location, 40));
     PumpkinGhost.add(new Pumpkin(location, 70));
-    ItemList.add(new Chandelier(500,500));
-    humanList.add(new Human(800,650,60,180, 700, 900, 200, 0.7,humanImg));
+    ItemList.add(new Chandelier(500, 500));
+    humanList.add(new Human(400, 650, 60, 180, 700, 900, 200, 0.7, humanImg));
   }
 
   void run() {
-    image(BG,width/2,height/2);
-    
-    makeText();
+    image(BG, width/2, height/2);
+    textAlign(CORNER);
+    println(gameOver);
+    if (scene == 1) {
+      gameRunning = true;
+    }
+    if (gameRunning) {
 
-    for (Player pg : PumpkinGhost) {
-      pg.display();
-      pg.update();
-    }
-    for (Item i : ItemList) {
-      i.display();
-    }
-    for(Human h : humanList){
-      h.display();
-      h.update();
+      for (Player pg : PumpkinGhost) {
+        pg.display();
+        if (!gameOver) pg.update();
+      }
+      for (Item i : ItemList) {
+        i.display();
+      }
+      for (Human h : humanList) {
+        h.display();
+        if (!gameOver) h.update();
+      }
+      makeText();
+
+      if(gameOver){
+        push();
+        fill(255);
+        textSize(32);
+        textAlign(CENTER);
+        text("Game Over", width/2, height/2);
+        pop();
+      }
     }
   }
 
@@ -35,7 +49,7 @@ class Game {
     for (Player pg : PumpkinGhost) {
       pg.keyPressed();
     }
-    if (key == 'e') {
+    if (key == 'e' || key == 'E') {
       changeStance();
     }
   }
@@ -51,8 +65,8 @@ class Game {
       pg.isGhost = !pg.isGhost;
     }
   }
-  
-  void makeText(){
+
+  void makeText() {
     textSize(24);
     if (PumpkinGhost.get(0).isGhost) {
       text("Ghost  -  Change with 'E'", 20, 20);

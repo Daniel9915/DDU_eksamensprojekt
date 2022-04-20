@@ -15,6 +15,7 @@ PImage BG;
 
 int scene = 0;
 int numberOfLevels = 0;
+boolean gameOver = false;
 
 Chandelier chan;
 
