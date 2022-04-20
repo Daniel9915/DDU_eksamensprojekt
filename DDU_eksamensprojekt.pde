@@ -12,6 +12,7 @@ PImage noImg;
 PImage BG;
 
 int scene = 0;
+boolean gameOver = false;
 
 Chandelier chan;
 
