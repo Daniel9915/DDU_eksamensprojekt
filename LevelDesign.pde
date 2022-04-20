@@ -61,8 +61,7 @@ void levelDesignKeys() {
   }
 
   if (keyCode == ENTER) {
-    currentLevelEdit++;
-    loadLevel();
+    scene = 0;
   }
 }
 
