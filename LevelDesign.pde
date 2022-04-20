@@ -2,7 +2,7 @@ ArrayList<Item> allItems = new ArrayList<Item>();
 ArrayList<Item> levelItems = new ArrayList<Item>();
 int frame = 0;
 int item = 0;
-int currentLevelEdit = 1;
+int currentLevelEdit;
 
 void levelDesignDraw() {
 
@@ -73,6 +73,7 @@ void addAllItems() {
 }
 
 void loadLevel() {
+  println("load level " + currentLevelEdit);
   if ( Data.connect() ) {
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
     levelItems.clear();
@@ -87,5 +88,12 @@ void loadLevel() {
         }
       }
     }
+  }
+}
+
+void levelEditSelect(){
+  
+  for(Button b: levelButtons){
+    b.display();
   }
 }

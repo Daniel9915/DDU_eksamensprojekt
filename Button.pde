@@ -9,17 +9,26 @@ class Button {
     setScene = scene_;
     text = text_;
   }
-  
-  void display(){
+
+  void display() {
     fill(245);
-    rect(x,y,300,150,10);
+    rect(x, y, 300, 150, 10);
     fill(0);
     textSize(40);
-    text(text,x,y+15);
-    
-    if(mousePressed){
-      if(abs(x-mouseX)<150 && abs(y-mouseY)<75){
+    text(text, x, y+15);
+
+    if (mousePressed) {
+      if (abs(x-mouseX)<150 && abs(y-mouseY)<75) {
         mousePressed = false;
+        if (int(text) == 0) {
+          if (text.equals("+")) {
+            currentLevelEdit = numberOfLevels+1;
+            loadLevel();
+          }
+        } else {
+          currentLevelEdit = int(text);
+          loadLevel();
+        }
         scene = setScene;
       }
     }
