@@ -54,6 +54,7 @@ class Item {
     broken = true;
     acceleration.mult(0);
     velocity.mult(0);
-    //activeImage = image2;
+    if(image2 != null)
+      activeImage = image2;
   }
 }

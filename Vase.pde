@@ -4,7 +4,8 @@ class Vase extends Item {
     super(_x, _y, _w, _h, _image);
   }
   Vase(float _x, float _y) {
-    super(_x, _y, 50, 50, noImg);
+    super(_x, _y, 30, 50, vase);
+    image2 = vase_broken;
   }
 
   void display() {
