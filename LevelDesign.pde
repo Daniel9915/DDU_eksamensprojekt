@@ -3,8 +3,17 @@ ArrayList<Item> levelItems = new ArrayList<Item>();
 int frame = 0;
 int item = 0;
 int currentLevelEdit;
+boolean spawnSet = false;
+boolean graveSet = false;
 
 void levelDesignDraw() {
+
+  if (spawnSet && item == 0) {
+    item = 1;
+  }
+  if (graveSet && item == 1) {
+    item = 2;
+  }
 
   for (Item t : levelItems) {
     t.display();
@@ -33,7 +42,11 @@ void levelDesignDraw() {
 }
 
 void addNew() {
-  if (allItems.get(item) instanceof Chandelier) {
+  if (allItems.get(item) instanceof Spawn) {
+    levelItems.add(new Spawn(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Grave) {
+    levelItems.add(new Grave(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Chandelier) {
     levelItems.add(new Chandelier(mouseX, mouseY));
   } else if (allItems.get(item) instanceof Tv) {
     levelItems.add(new Tv(mouseX, mouseY));
@@ -48,16 +61,8 @@ void addNew() {
 }
 
 void levelDesignKeys() {
-  switch(key) {    
-  case '0':
-    item = 0;
-    break;
-  case '1':
-    item = 1;
-    break;
-  case '2':
-    item = 2;
-    break;
+  if (int(key-48)<allItems.size() && int(key-48)>-1) {
+    item = int(key-48);
   }
 
   if (keyCode == ENTER) {
@@ -66,23 +71,33 @@ void levelDesignKeys() {
 }
 
 void addAllItems() {
+  allItems.add(new Spawn(0, 0));
+  allItems.add(new Grave(0, 0));
   allItems.add(new Chandelier(0, 0));
   allItems.add(new Tv(0, 0));
   allItems.add(new Vase(0, 0));
 }
 
 void loadLevel() {
+  spawnSet = false;
+  graveSet = false;
   println("load level " + currentLevelEdit);
   if ( Data.connect() ) {
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
     levelItems.clear();
     while (Data.next()) {
       if (Data.getInt("LevelIndex")==currentLevelEdit) {
-        if (Data.getInt("ClassIndex")==0) {
-          levelItems.add(new Chandelier(Data.getInt("X"), Data.getInt("Y")));
-        } else if (Data.getInt("ClassIndex")==1) {
-          levelItems.add(new Tv(Data.getInt("X"), Data.getInt("Y")));
+        if (Data.getInt("ClassIndex")==0 && spawnSet == false) {
+          levelItems.add(new Spawn(Data.getInt("X"), Data.getInt("Y")));
+          spawnSet = true;
+        } else if (Data.getInt("ClassIndex")==1 && graveSet == false) {
+          levelItems.add(new Grave(Data.getInt("X"), Data.getInt("Y")));
+          graveSet = true;
         } else if (Data.getInt("ClassIndex")==2) {
+          levelItems.add(new Chandelier(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==3) {
+          levelItems.add(new Tv(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==4) {
           levelItems.add(new Vase(Data.getInt("X"), Data.getInt("Y")));
         }
       }
@@ -90,9 +105,9 @@ void loadLevel() {
   }
 }
 
-void levelEditSelect(){
-  
-  for(Button b: levelButtons){
+void levelEditSelect() {
+
+  for (Button b : levelButtons) {
     b.display();
   }
 }
