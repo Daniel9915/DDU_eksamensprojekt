@@ -51,10 +51,12 @@ class Item {
   }
 
   void shatter() {
-    broken = true;
-    acceleration.mult(0);
-    velocity.mult(0);
-    if(image2 != null)
-      activeImage = image2;
+    if (picekedUp) {
+      broken = true;
+      acceleration.mult(0);
+      velocity.mult(0);
+      if (image2 != null)
+        activeImage = image2;
+    }
   }
 }

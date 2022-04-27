@@ -7,6 +7,7 @@ boolean spawnSet = false;
 boolean graveSet = false;
 
 void levelDesignDraw() {
+  image(BG, width/2, height/2);
 
   if (spawnSet && item == 0) {
     item = 1;
@@ -44,8 +45,10 @@ void levelDesignDraw() {
 void addNew() {
   if (allItems.get(item) instanceof Spawn) {
     levelItems.add(new Spawn(mouseX, mouseY));
+    spawnSet = true;
   } else if (allItems.get(item) instanceof Grave) {
     levelItems.add(new Grave(mouseX, mouseY));
+    graveSet = true;
   } else if (allItems.get(item) instanceof Chandelier) {
     levelItems.add(new Chandelier(mouseX, mouseY));
   } else if (allItems.get(item) instanceof Tv) {
