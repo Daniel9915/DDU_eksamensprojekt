@@ -40,14 +40,20 @@ void draw() {
     break;
 
   case 1:
-    game.run();
+    levelSelect();
     break;
 
   case 2:
     levelEditSelect();
     break;
+    
   case 3:
     levelDesignDraw();
+    break;
+  
+  case 4:
+    game.run();
+    break;
   }
 }
 

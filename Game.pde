@@ -15,33 +15,27 @@ class Game {
   void run() {
     image(BG, width/2, height/2);
     textAlign(CORNER);
-    println(gameOver);
-    if (scene == 1) {
-      gameRunning = true;
+
+    for (Player pg : PumpkinGhost) {
+      pg.display();
+      if (!gameOver) pg.update();
     }
-    if (gameRunning) {
+    for (Item i : ItemList) {
+      i.display();
+    }
+    for (Human h : humanList) {
+      h.display();
+      if (!gameOver) h.update();
+    }
+    makeText();
 
-      for (Player pg : PumpkinGhost) {
-        pg.display();
-        if (!gameOver) pg.update();
-      }
-      for (Item i : ItemList) {
-        i.display();
-      }
-      for (Human h : humanList) {
-        h.display();
-        if (!gameOver) h.update();
-      }
-      makeText();
-
-      if(gameOver){
-        push();
-        fill(255);
-        textSize(32);
-        textAlign(CENTER);
-        text("Game Over", width/2, height/2);
-        pop();
-      }
+    if (gameOver) {
+      push();
+      fill(255);
+      textSize(32);
+      textAlign(CENTER);
+      text("Game Over", width/2, height/2);
+      pop();
     }
   }
 
