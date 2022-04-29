@@ -6,6 +6,7 @@ class Human extends Game{
   float viewDistance;
   float speed;
   PImage humanImg;
+  int imgIndex = 0;
   boolean hasDetectedPumpkin = false;
   
   boolean left = false;
@@ -97,8 +98,12 @@ class Human extends Game{
   
   void walk(){
     if(left){
+      humanImg = humanImg.get(imgIndex);
       if(waitTime<0){
         x-= speed;
+        if(frameCount%20 == 0){
+          imgIndex++;
+        }
         if(x<leftWalk){
           left = false;
           waitTime = 240;

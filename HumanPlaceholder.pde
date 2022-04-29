@@ -4,7 +4,7 @@ class HumanPlace extends Item {
     super(_x, _y, _w, _h, _image);
   }
   HumanPlace(float _x, float _y) {
-    super(_x, _y, 60, 180, humanImg);
+    super(_x, _y, 89, 180, humanImg.get(7));
   }
 
   void display() {

@@ -9,7 +9,7 @@ class Game {
     PumpkinGhost.add(new Ghost(location, 40));
     PumpkinGhost.add(new Pumpkin(location, 70));
     ItemList.add(new Chandelier(500, 500));
-    humanList.add(new Human(400, 650, 60, 180, 700, 900, 200, 0.7, humanImg));
+    humanList.add(new Human(400, 650, 89, 180, 700, 900, 200, 0.7, humanImg.get(0)));
   }
 
   void run() {
