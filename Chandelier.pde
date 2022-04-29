@@ -26,7 +26,15 @@ class Chandelier extends Item {
     }
   }
 
-  void Interact() {
-    angleAdder = 0.1;
+  void interact() {
+    if (interactDelay<frameCount) {
+      interactDelay = frameCount+120;
+      angleAdder = 0.1;
+
+      for (Human h : game.humanList) {
+        if ((abs(x-h.x)/4)<100)
+          h.scaredCounter += 100-(abs(x-h.x)/4);
+      }
+    }
   }
 }

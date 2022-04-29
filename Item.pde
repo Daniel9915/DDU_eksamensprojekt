@@ -3,6 +3,7 @@ class Item {
   float x, y, w, h;
   float angle = 0;
   float weight = 1.005;
+  int interactDelay = 0;
   PVector acceleration = new PVector(0, 1);
   PVector velocity = new PVector(0, 0);
   PImage activeImage;
@@ -30,7 +31,7 @@ class Item {
       pickUp();
     }
 
-    if (y>PumpkinGhost.get(1).pLoc.y) {
+    if (y>PumpkinGhost.get(1).pLoc.y && !broken) {
       shatter();
     }
   }
@@ -45,9 +46,12 @@ class Item {
     }
   }
 
-  void Interact() {
-    picekedUp = true;
-    velocity.set(10, -10);
+  void interact() {
+    if (interactDelay<frameCount) {
+      interactDelay = frameCount+60;
+      picekedUp = true;
+      velocity.set(10, -10);
+    }
   }
 
   void shatter() {
@@ -55,6 +59,12 @@ class Item {
       broken = true;
       acceleration.mult(0);
       velocity.mult(0);
+
+      for (Human h : game.humanList) { // jo tættere et menneske er på en genstand, jo mere bliver han skræmt. Hvis afstanden er mere end 400px så sker der ikke noget.
+        if ((abs(x-h.x)/4)<100)
+          h.scaredCounter += 100-(abs(x-h.x)/4);
+      }
+
       if (image2 != null)
         activeImage = image2;
     }
