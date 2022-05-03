@@ -13,5 +13,14 @@ class Grave extends Item {
     translate(x, y-h/2);
     super.display();
     pop();
+    
+    if(abs(x-PumpkinGhost.get(1).pLoc.x)<w/2 && !gameOver){
+      gameWon = true;
+      println(gameWon);
+    }  
   }
+  
+  void pickUp() {}
+  void interact() {}
+  void shatter() {}
 }

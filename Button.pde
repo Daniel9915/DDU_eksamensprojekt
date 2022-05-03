@@ -20,6 +20,7 @@ class Button {
     if (mousePressed) {
       if (abs(x-mouseX)<150 && abs(y-mouseY)<75) {
         mousePressed = false;
+        scene = setScene;
         if (int(text) == 0) {
           if (text.equals("+")) {
             currentLevelEdit = numberOfLevels+1;
@@ -29,7 +30,6 @@ class Button {
           currentLevelEdit = int(text);
           loadLevel();
         }
-        scene = setScene;
       }
     }
   }

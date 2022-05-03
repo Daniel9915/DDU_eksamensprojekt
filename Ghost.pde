@@ -24,7 +24,7 @@ class Ghost extends Player {
       move();
     }
     enterPumpkin();
-    for (Item i : ItemList) { // tjekker om spøgelset er tæt på et opjekt og om man højre- eller venstre-klikker.
+    for (Item i : levelItems) { // tjekker om spøgelset er tæt på et opjekt og om man højre- eller venstre-klikker.
       if (dist(i.x, i.y, gLoc.x, gLoc.y) < 50) {
         if (abs(mouseX-i.x)<i.w && abs(mouseY-i.y)<i.h) {
           if (mousePressed && (mouseButton == LEFT)) {

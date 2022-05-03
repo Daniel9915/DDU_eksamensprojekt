@@ -8,7 +8,6 @@ ArrayList<Button> levelButtons = new ArrayList<Button>();
 ArrayList<PImage> humanImges = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesH = new ArrayList<PImage>();
 
-
 PImage ghostImg;
 PImage pumpkinImg;
 PImage chandelier;
@@ -19,7 +18,7 @@ PImage BG;
 
 int scene = 0;
 int numberOfLevels = 0;
-boolean gameOver = false;
+boolean gameOver = false, gameWon = false;
 
 Chandelier chan;
 

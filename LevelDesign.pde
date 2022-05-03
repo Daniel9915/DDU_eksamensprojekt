@@ -94,7 +94,14 @@ void loadLevel() {
     while (Data.next()) {
       if (Data.getInt("LevelIndex")==currentLevelEdit) {
         if (Data.getInt("ClassIndex")==0 && spawnSet == false) {
-          levelItems.add(new Spawn(Data.getInt("X"), Data.getInt("Y")));
+          if (scene == 3) {
+            levelItems.add(new Spawn(Data.getInt("X"), Data.getInt("Y")));
+          } else if (scene == 4) {
+            PumpkinGhost.clear();
+            Coords tempLoc = new Coords(Data.getInt("X"), Data.getInt("Y"));
+            PumpkinGhost.add(new Ghost(tempLoc, 40));
+            PumpkinGhost.add(new Pumpkin(tempLoc, 70));
+          }
           spawnSet = true;
         } else if (Data.getInt("ClassIndex")==1 && graveSet == false) {
           levelItems.add(new Grave(Data.getInt("X"), Data.getInt("Y")));
@@ -106,7 +113,12 @@ void loadLevel() {
         } else if (Data.getInt("ClassIndex")==4) {
           levelItems.add(new Vase(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==5) {
-          levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
+          if (scene == 3) {
+            levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
+          }
+          else if(scene == 4){
+            game.humanList.add(new Human(Data.getInt("X"), Data.getInt("Y"), 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
+          }
         }
       }
     }
