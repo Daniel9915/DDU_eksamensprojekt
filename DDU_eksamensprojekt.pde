@@ -3,7 +3,6 @@ import de.bezier.data.sql.*;
 SQLite Data;
 Game game = new Game();
 ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
-ArrayList<Item> ItemList = new ArrayList<Item>();
 ArrayList<Button> levelButtons = new ArrayList<Button>();
 ArrayList<PImage> humanImges = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesH = new ArrayList<PImage>();
@@ -19,8 +18,6 @@ PImage BG;
 int scene = 0;
 int numberOfLevels = 0;
 boolean gameOver = false, gameWon = false;
-
-Chandelier chan;
 
 void setup() {
   imageMode(CENTER);

@@ -14,4 +14,9 @@ class Vase extends Item {
     super.display();
     pop();
   }
+  
+  void shatter() {
+    super.shatter();
+    w*=1.7;
+  }
 }

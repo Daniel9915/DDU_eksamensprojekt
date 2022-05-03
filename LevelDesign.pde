@@ -85,8 +85,11 @@ void addAllItems() {
 }
 
 void loadLevel() {
+  gameOver = false;
+  gameWon = false;
   spawnSet = false;
   graveSet = false;
+  game.humanList.clear();
   println("load level " + currentLevelEdit);
   if ( Data.connect() ) {
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
