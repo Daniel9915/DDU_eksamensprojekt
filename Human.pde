@@ -35,12 +35,12 @@ class Human extends Game {
 
   void update() {
 
-    if(scaredCounter>100){
+    if (scaredCounter>100) {
       rightWalk = width+viewDistance+50;
       left = false;
       speed = runSpeed;
     }
-    
+
     move();
     detect();
     showRange();
@@ -135,10 +135,15 @@ class Human extends Game {
   }
 
   void run() {
+    if (frameCount%7 == 0) {
+      imgIndex++;
+    }
     if (PumpkinGhost.get(1).pLoc.x < x-5) {
       x-=runSpeed;
+      humanImg = humanImgesRun.get(imgIndex%6);
     } else if (PumpkinGhost.get(1).pLoc.x > x+5) {
       x+=runSpeed;
+      humanImg = humanImgesRunH.get(imgIndex%6);
     }
   }
 }

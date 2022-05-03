@@ -6,6 +6,9 @@ ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
 ArrayList<Button> levelButtons = new ArrayList<Button>();
 ArrayList<PImage> humanImges = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesH = new ArrayList<PImage>();
+ArrayList<PImage> humanImgesRun = new ArrayList<PImage>();
+ArrayList<PImage> humanImgesRunH = new ArrayList<PImage>();
+
 
 PImage ghostImg;
 PImage pumpkinImg;
@@ -62,22 +65,18 @@ void loadData() {
   chandelier = loadImage("data/images/chandelier.png");
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
-  humanImges.add(loadImage("data/images/0.png"));
-  humanImges.add(loadImage("data/images/1.png"));
-  humanImges.add(loadImage("data/images/2.png"));
-  humanImges.add(loadImage("data/images/3.png"));
-  humanImges.add(loadImage("data/images/4.png"));
-  humanImges.add(loadImage("data/images/5.png"));
-  humanImges.add(loadImage("data/images/6.png"));
-  humanImges.add(loadImage("data/images/7.png"));
-  humanImgesH.add(loadImage("data/images/0H.png"));
-  humanImgesH.add(loadImage("data/images/1H.png"));
-  humanImgesH.add(loadImage("data/images/2H.png"));
-  humanImgesH.add(loadImage("data/images/3H.png"));
-  humanImgesH.add(loadImage("data/images/4H.png"));
-  humanImgesH.add(loadImage("data/images/5H.png"));
-  humanImgesH.add(loadImage("data/images/6H.png"));
-  humanImgesH.add(loadImage("data/images/7H.png"));
+  for (int i = 0; i<16; i++) {
+    if (i<8)
+      humanImges.add(loadImage("data/images/"+i+".png"));
+    else
+      humanImgesH.add(loadImage("data/images/"+(i-8)+"H.png"));
+  }
+  for (int i = 0; i<14; i++) {
+    if (i<7)
+      humanImgesRun.add(loadImage("data/images/R"+i+".png"));
+    else
+      humanImgesRunH.add(loadImage("data/images/R"+(i-7)+"H.png"));
+  }
   noImg = loadImage("data/images/noImg.png");
   BG = loadImage("data/images/BackgroundLowerQual.png");
 
