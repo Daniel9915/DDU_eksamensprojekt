@@ -118,8 +118,7 @@ void loadLevel() {
         } else if (Data.getInt("ClassIndex")==5) {
           if (scene == 3) {
             levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
-          }
-          else if(scene == 4){
+          } else if (scene == 4) {
             game.humanList.add(new Human(Data.getInt("X"), Data.getInt("Y"), 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
           }
         }
@@ -129,6 +128,7 @@ void loadLevel() {
 }
 
 void levelEditSelect() {
+  image(menu2, width/2, height/2, width, height);
 
   for (Button b : levelButtons) {
     b.display();

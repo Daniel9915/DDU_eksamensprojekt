@@ -20,6 +20,7 @@ PImage noImg;
 PImage BG;
 PImage check;
 PImage menu;
+PImage menu2;
 
 int scene = 0;
 int numberOfLevels = 0;
@@ -70,7 +71,9 @@ void loadData() {
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
   check = loadImage("data/images/check.png");
-  menu = loadImage("data/images/Menu.png");
+  menu = loadImage("data/images/menu.png");
+  menu2 = loadImage("data/images/menu2.png");
+
 
   for (int i = 0; i<16; i++) {
     if (i<8)
