@@ -19,6 +19,7 @@ PImage vase_broken;
 PImage noImg;
 PImage BG;
 PImage check;
+PImage menu;
 
 int scene = 0;
 int numberOfLevels = 0;
@@ -69,6 +70,8 @@ void loadData() {
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
   check = loadImage("data/images/check.png");
+  menu = loadImage("data/images/Menu.png");
+
   for (int i = 0; i<16; i++) {
     if (i<8)
       humanImges.add(loadImage("data/images/"+i+".png"));
@@ -109,7 +112,9 @@ void loadData() {
 
 void keyPressed() {
   game.keyPressed();
-  levelDesignKeys();
+  if (scene == 3) {
+    levelDesignKeys();
+  }
 }
 
 void keyReleased() {

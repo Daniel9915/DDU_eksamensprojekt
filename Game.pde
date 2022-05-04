@@ -14,7 +14,7 @@ class Game {
 
   void run() {
     image(BG, width/2, height/2);
-    textAlign(CORNER);
+    //textAlign(CORNER);
 
     for (Item i : levelItems) {
       i.display();
