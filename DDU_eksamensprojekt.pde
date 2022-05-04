@@ -118,6 +118,9 @@ void keyPressed() {
   if (scene == 3) {
     levelDesignKeys();
   }
+  if (key == BACKSPACE) {
+    scene = 0;
+  }
 }
 
 void keyReleased() {

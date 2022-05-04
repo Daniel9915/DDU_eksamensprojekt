@@ -15,8 +15,10 @@ void levelSelect() {
   for (Button b : levelButtons) {
     if (!b.text.equals("+")) {
       b.setScene = 4;
-      currentLevelEdit = int(b.text);
-      loadLevel();
+      if (mousePressed) {
+        currentLevelEdit = int(b.text);
+        loadLevel();
+      }
       b.display();
     }
   }

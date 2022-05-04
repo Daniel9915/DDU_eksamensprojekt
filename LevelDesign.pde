@@ -131,6 +131,7 @@ void levelEditSelect() {
   image(menu2, width/2, height/2, width, height);
 
   for (Button b : levelButtons) {
+    b.setScene = 3;
     b.display();
   }
 }

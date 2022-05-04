@@ -38,7 +38,7 @@ class Item {
 
   void pickUp() {
     for (Item i : levelItems) {
-      if(i.pickedUp && !i.broken && i != this){
+      if (i.pickedUp && !i.broken && i != this) {
         return;
       }
     }

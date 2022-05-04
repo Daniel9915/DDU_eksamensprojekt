@@ -6,8 +6,8 @@ class Game {
   }
 
   void startUp() {
-    //PumpkinGhost.add(new Ghost(location, 40));
-    //PumpkinGhost.add(new Pumpkin(location, 70));
+    PumpkinGhost.add(new Ghost(location, 40));
+    PumpkinGhost.add(new Pumpkin(location, 70));
     //ItemList.add(new Chandelier(500, 500));
     //humanList.add(new Human(400, 650, 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
   }
