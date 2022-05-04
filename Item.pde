@@ -9,7 +9,7 @@ class Item {
   PImage activeImage;
   PImage image1;
   PImage image2;
-  boolean picekedUp = false, broken = false;
+  boolean pickedUp = false, broken = false;
 
   Item(float _x, float _y, float _w, float _h, PImage _image) {
     x = _x;
@@ -21,13 +21,13 @@ class Item {
 
   void display() {
     image(activeImage, 0, h/2, w, h);
-    if (picekedUp) {
+    if (pickedUp) {
       acceleration.y *= weight;
       velocity.add(acceleration);
       y+=velocity.y;
       x+=velocity.x;
     }
-    if (picekedUp && mousePressed && (mouseButton == LEFT) && velocity.y < 1.5) {
+    if (pickedUp && mousePressed && (mouseButton == LEFT) && velocity.y < 1.5) {
       pickUp();
     }
 
@@ -37,8 +37,13 @@ class Item {
   }
 
   void pickUp() {
+    for (Item i : levelItems) {
+      if(i.pickedUp && !i.broken && i != this){
+        return;
+      }
+    }
     if (!broken) {
-      picekedUp = true;
+      pickedUp = true;
       x = PumpkinGhost.get(0).gLoc.x;
       y = PumpkinGhost.get(0).gLoc.y;
       acceleration.y = 1;
@@ -49,13 +54,13 @@ class Item {
   void interact() {
     if (interactDelay<frameCount) {
       interactDelay = frameCount+60;
-      picekedUp = true;
+      pickedUp = true;
       velocity.set(10, -10);
     }
   }
 
   void shatter() {
-    if (picekedUp) {
+    if (pickedUp) {
       broken = true;
       acceleration.mult(0);
       velocity.mult(0);
