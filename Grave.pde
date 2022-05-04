@@ -14,9 +14,10 @@ class Grave extends Item {
     super.display();
     pop();
     
-    if(abs(x-PumpkinGhost.get(1).pLoc.x)<w/2 && !gameOver){
+    if(abs(x-PumpkinGhost.get(1).pLoc.x)<w/2 && !gameOver && !gameWon){
+      completedDelay = frameCount+200;
       gameWon = true;
-      println(gameWon);
+      levelsCompleted[currentLevelEdit-1] = true;
     }  
   }
   

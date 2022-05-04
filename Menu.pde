@@ -17,4 +17,11 @@ void levelSelect() {
       b.display();
     }
   }
+  int i = 0;
+  for (boolean b : levelsCompleted) {
+    if (b == true) {
+      image(check, 350*i+325, 200, 50, 50);
+    }
+    i++;
+  }
 }

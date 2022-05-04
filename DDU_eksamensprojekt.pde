@@ -8,6 +8,7 @@ ArrayList<PImage> humanImges = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesH = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesRun = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesRunH = new ArrayList<PImage>();
+boolean[] levelsCompleted;
 
 
 PImage ghostImg;
@@ -17,9 +18,11 @@ PImage vase;
 PImage vase_broken;
 PImage noImg;
 PImage BG;
+PImage check;
 
 int scene = 0;
 int numberOfLevels = 0;
+int completedDelay;
 boolean gameOver = false, gameWon = false;
 
 void setup() {
@@ -65,6 +68,7 @@ void loadData() {
   chandelier = loadImage("data/images/chandelier.png");
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
+  check = loadImage("data/images/check.png");
   for (int i = 0; i<16; i++) {
     if (i<8)
       humanImges.add(loadImage("data/images/"+i+".png"));
@@ -100,6 +104,7 @@ void loadData() {
         levelButtons.add(new Button(x+200, y+150, 3, "+"));
     }
   }
+  levelsCompleted =  new boolean[numberOfLevels];
 }
 
 void keyPressed() {

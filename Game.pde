@@ -39,6 +39,18 @@ class Game {
       text("Game Over", width/2, height/2);
       pop();
     }
+    if (gameWon) {
+      push();
+      fill(255);
+      textSize(32);
+      textAlign(CENTER);
+      text("Level Completed", width/2, height/2);
+      pop();
+      
+      if(completedDelay<frameCount){
+        scene = 1;
+      }
+    }
   }
 
   void keyPressed() {
