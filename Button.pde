@@ -15,7 +15,7 @@ class Button {
     image(button, x, y, 300, 150);
     fill(0);
     textSize(40);
-    text(text, x, y+15);
+    text(text, x, y+13);
 
     if (mousePressed) {
       if (abs(x-mouseX)<150 && abs(y-mouseY)<75) {
