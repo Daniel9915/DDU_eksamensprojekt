@@ -10,6 +10,7 @@ ArrayList<PImage> humanImgesRun = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesRunH = new ArrayList<PImage>();
 boolean[] levelsCompleted;
 
+PFont font;
 
 PImage ghostImg;
 PImage pumpkinImg;
@@ -65,6 +66,9 @@ void draw() {
 }
 
 void loadData() {
+  font = createFont("data/FingerPaint-Regular.ttf", 128);
+  textFont(font);
+  
   Data = new SQLite( this, "Levels.sqlite" );
   ghostImg = loadImage("data/images/ghost.png");
   pumpkinImg = loadImage("data/images/pumpkin.png"); 
