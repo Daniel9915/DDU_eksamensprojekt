@@ -12,7 +12,7 @@ class Button {
 
   void display() {
     fill(250,145,0);
-    rect(x, y, 300, 150, 10);
+    image(button, x, y, 300, 150);
     fill(0);
     textSize(40);
     text(text, x, y+15);
