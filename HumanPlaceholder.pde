@@ -10,6 +10,9 @@ class HumanPlace extends Item {
   void display() {
     push();
     translate(x, y-h/2);
+    fill(150,150,150,150);
+    noStroke();
+    rect(0, h/2, 200, 10, 10);
     super.display();
     pop();
   }

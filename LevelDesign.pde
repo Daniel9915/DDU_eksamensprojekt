@@ -119,7 +119,7 @@ void loadLevel() {
           if (scene == 3) {
             levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
           } else if (scene == 4) {
-            game.humanList.add(new Human(Data.getInt("X"), Data.getInt("Y"), 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
+            game.humanList.add(new Human(Data.getInt("X"), Data.getInt("Y"), 89, 180, Data.getInt("X")-100, Data.getInt("X")+100, 200, 0.7, humanImges.get(0)));
           }
         }
       }
