@@ -93,7 +93,7 @@ void loadData() {
       humanImgesRunH.add(loadImage("data/images/R"+(i-7)+"H.png"));
   }
   noImg = loadImage("data/images/noImg.png");
-  BG = loadImage("data/images/BackgroundLowerQual.png");
+  BG = loadImage("data/images/Background.png");
 
   addAllItems();
 
