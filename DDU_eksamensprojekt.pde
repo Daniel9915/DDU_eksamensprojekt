@@ -27,6 +27,7 @@ PImage check;
 PImage menu;
 PImage menu2;
 PImage button;
+PImage house;
 
 int scene = 0;
 int numberOfLevels = 0;
@@ -88,6 +89,8 @@ void loadData() {
   menu = loadImage("data/images/menu.png");
   menu2 = loadImage("data/images/menu2.png");
   button = loadImage("data/images/button.png");
+  house = loadImage("data/images/house.png");
+
 
   for (int i = 0; i<16; i++) {
     if (i<8)

@@ -18,6 +18,7 @@ class Game {
     //translate(width/4-PumpkinGhost.get(1).pLoc.x/2, 0);
     //image(BG, width/2, (height/2-height/6)-20, width*1.5, height*1.5);
     image(BG, width/2, height/2);
+    image(house,width/2,(height/2)-50,1000,750);
     //textAlign(CORNER);
 
     for (Item i : levelItems) {

@@ -17,6 +17,7 @@ class Grave extends Item {
     if(abs(x-GhostPumpkin.get(1).pLoc.x)<w/2 && !gameOver && !gameWon){
       completedDelay = frameCount+200;
       gameWon = true;
+      if(currentLevelEdit <= levelsCompleted.length)
       levelsCompleted[currentLevelEdit-1] = true;
     }  
   }
