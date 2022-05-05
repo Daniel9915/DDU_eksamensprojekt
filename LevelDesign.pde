@@ -22,6 +22,7 @@ void levelDesignDraw() {
 
   allItems.get(item).x = mouseX;
   allItems.get(item).y = mouseY;
+  itemText();
   allItems.get(item).display();
 
   if (mousePressed && frame < frameCount) {
@@ -63,6 +64,25 @@ void addNew() {
     String sql = "INSERT INTO Level( ClassIndex, X, Y, LevelIndex)VALUES ('" + item + "', '" + mouseX + "', '" + mouseY + "', '" + currentLevelEdit + "');";
     Data.execute(sql);
   }
+}
+
+
+void itemText(){
+  String temp = "";
+  if (allItems.get(item) instanceof Spawn) {
+    temp = "Spawn";
+  } else if (allItems.get(item) instanceof Grave) {
+    temp = "Grave";
+  } else if (allItems.get(item) instanceof Chandelier) {
+    temp = "Chandelier";
+  } else if (allItems.get(item) instanceof Tv) {
+    temp = "Tv";
+  } else if (allItems.get(item) instanceof Vase) {
+    temp = "Vase";
+  } else if (allItems.get(item) instanceof HumanPlace) {
+    temp = "Human";
+  }
+  text(temp,mouseX,mouseY-50);
 }
 
 void levelDesignKeys() {
