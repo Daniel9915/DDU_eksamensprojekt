@@ -58,6 +58,8 @@ void addNew() {
     levelItems.add(new Vase(mouseX, mouseY));
   } else if (allItems.get(item) instanceof HumanPlace) {
     levelItems.add(new HumanPlace(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Stairs) {
+    levelItems.add(new Stairs(mouseX, mouseY));
   }
   if ( Data.connect() ) {
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
@@ -66,8 +68,7 @@ void addNew() {
   }
 }
 
-
-void itemText(){
+void itemText() {
   String temp = "";
   if (allItems.get(item) instanceof Spawn) {
     temp = "Spawn";
@@ -82,7 +83,7 @@ void itemText(){
   } else if (allItems.get(item) instanceof HumanPlace) {
     temp = "Human";
   }
-  text(temp,mouseX,mouseY-50);
+  text(temp, mouseX, mouseY-50);
 }
 
 void levelDesignKeys() {
@@ -102,6 +103,7 @@ void addAllItems() {
   allItems.add(new Tv(0, 0));
   allItems.add(new Vase(0, 0));
   allItems.add(new HumanPlace(0, 0));
+  allItems.add(new Stairs(0, 0));
 }
 
 void loadLevel() {
@@ -135,6 +137,8 @@ void loadLevel() {
           levelItems.add(new Tv(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==4) {
           levelItems.add(new Vase(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==6) {
+          levelItems.add(new Stairs(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==5) {
           if (scene == 3) {
             levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
