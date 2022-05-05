@@ -89,8 +89,9 @@ void loadData() {
   menu = loadImage("data/images/menu.png");
   menu2 = loadImage("data/images/menu2.png");
   button = loadImage("data/images/button.png");
-  house = loadImage("data/images/house.png");
-
+  house = loadImage("data/images/houseLQ.png");
+  noImg = loadImage("data/images/noImg.png");
+  BG = loadImage("data/images/BackgroundLowerQual.png");
 
   for (int i = 0; i<16; i++) {
     if (i<8)
@@ -104,8 +105,7 @@ void loadData() {
     else
       humanImgesRunH.add(loadImage("data/images/R"+(i-7)+"H.png"));
   }
-  noImg = loadImage("data/images/noImg.png");
-  BG = loadImage("data/images/BackgroundLowerQual.png");
+  
 
   addAllItems();
 
