@@ -17,6 +17,7 @@ PImage pumpkinImg;
 PImage chandelier;
 PImage vase;
 PImage vase_broken;
+PImage cup;
 PImage noImg;
 PImage BG;
 PImage check;
@@ -69,13 +70,14 @@ void draw() {
 void loadData() {
   font = createFont("data/FingerPaint-Regular.ttf", 128);
   textFont(font);
-  
+
   Data = new SQLite( this, "Levels.sqlite" );
   ghostImg = loadImage("data/images/ghost.png");
   pumpkinImg = loadImage("data/images/pumpkin.png"); 
   chandelier = loadImage("data/images/chandelier.png");
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
+  cup = loadImage("data/images/Cup.png");
   check = loadImage("data/images/check.png");
   menu = loadImage("data/images/menu.png");
   menu2 = loadImage("data/images/menu2.png");
