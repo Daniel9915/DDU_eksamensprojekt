@@ -56,17 +56,17 @@ class Human extends Game {
   }
 
   void detect() {
-    if (PumpkinGhost.get(1).isGhost == false) {
-      if (PumpkinGhost.get(1).isMoving == true) {
+    if (GhostPumpkin.get(1).isGhost == false) {
+      if (GhostPumpkin.get(1).isMoving == true) {
         if (scaredCounter != 100) {
-          if ((left && PumpkinGhost.get(1).pLoc.x > x-viewDistance && PumpkinGhost.get(1).pLoc.x < x-attackRange) || (!left && PumpkinGhost.get(1).pLoc.x < x+viewDistance && PumpkinGhost.get(1).pLoc.x > x+attackRange)) {
+          if ((left && GhostPumpkin.get(1).pLoc.x > x-viewDistance && GhostPumpkin.get(1).pLoc.x < x-attackRange) || (!left && GhostPumpkin.get(1).pLoc.x < x+viewDistance && GhostPumpkin.get(1).pLoc.x > x+attackRange)) {
             hasDetectedPumpkin = true;
           }
         }
       }
     }
     if (hasDetectedPumpkin) {
-      if (PumpkinGhost.get(1).pLoc.x > x-attackRange && PumpkinGhost.get(1).pLoc.x < x+attackRange) {
+      if (GhostPumpkin.get(1).pLoc.x > x-attackRange && GhostPumpkin.get(1).pLoc.x < x+attackRange) {
         isInAttackRange = true;
       }
     }
@@ -142,10 +142,10 @@ class Human extends Game {
     if (frameCount%7 == 0) {
       imgIndex++;
     }
-    if (PumpkinGhost.get(1).pLoc.x < x-5) {
+    if (GhostPumpkin.get(1).pLoc.x < x-5) {
       x-=runSpeed;
       humanImg = humanImgesRun.get(imgIndex%6);
-    } else if (PumpkinGhost.get(1).pLoc.x > x+5) {
+    } else if (GhostPumpkin.get(1).pLoc.x > x+5) {
       x+=runSpeed;
       humanImg = humanImgesRunH.get(imgIndex%6);
     }

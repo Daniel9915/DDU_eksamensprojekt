@@ -120,10 +120,10 @@ void loadLevel() {
           if (scene == 3) {
             levelItems.add(new Spawn(Data.getInt("X"), Data.getInt("Y")));
           } else if (scene == 4) {
-            PumpkinGhost.clear();
+            GhostPumpkin.clear();
             Coords tempLoc = new Coords(Data.getInt("X"), Data.getInt("Y"));
-            PumpkinGhost.add(new Ghost(tempLoc, 40));
-            PumpkinGhost.add(new Pumpkin(tempLoc, 70));
+            GhostPumpkin.add(new Ghost(tempLoc, 40));
+            GhostPumpkin.add(new Pumpkin(tempLoc, 70));
           }
           spawnSet = true;
         } else if (Data.getInt("ClassIndex")==1 && graveSet == false) {

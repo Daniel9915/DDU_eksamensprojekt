@@ -44,8 +44,8 @@ class Item extends Game{
     }
     if (!broken) {
       pickedUp = true;
-      x = PumpkinGhost.get(0).gLoc.x;
-      y = PumpkinGhost.get(0).gLoc.y;
+      x = GhostPumpkin.get(0).gLoc.x;
+      y = GhostPumpkin.get(0).gLoc.y;
       acceleration.y = 1;
       velocity.y = 0;
     }

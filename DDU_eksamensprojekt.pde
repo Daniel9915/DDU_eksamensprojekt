@@ -2,7 +2,7 @@ import de.bezier.data.sql.*;
 
 SQLite Data;
 Game game = new Game();
-ArrayList<Player> PumpkinGhost = new ArrayList<Player>();
+ArrayList<Player> GhostPumpkin = new ArrayList<Player>();
 ArrayList<Button> levelButtons = new ArrayList<Button>();
 ArrayList<PImage> humanImges = new ArrayList<PImage>();
 ArrayList<PImage> humanImgesH = new ArrayList<PImage>();
@@ -133,4 +133,23 @@ void keyPressed() {
 
 void keyReleased() {
   game.keyReleased();
+}
+
+//Check if coordinates is in box
+boolean coordinatesBox(Coords point, float startX, float endX, float startY, float endY){
+  if(coordinatesBetween(point.x,startX,endX)){
+    if(coordinatesBetween(point.y,startY,endY)){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+//Check if coordinate is between two others.
+boolean coordinatesBetween(float point, float start, float end){
+  if(point > start && point < end){
+    return true;
+  }
+  return false;
 }

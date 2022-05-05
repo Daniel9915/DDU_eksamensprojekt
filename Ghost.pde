@@ -39,8 +39,8 @@ class Ghost extends Player {
 
   void enterPumpkin() {
     if (!isGhost) {
-      gLoc.x = PumpkinGhost.get(1).pLoc.x;
-      gLoc.y = PumpkinGhost.get(1).pLoc.y;
+      gLoc.x = GhostPumpkin.get(1).pLoc.x;
+      gLoc.y = GhostPumpkin.get(1).pLoc.y;
       buttomLoc.x = gLoc.x;
       buttomLoc.y = gLoc.y;
     }
@@ -51,7 +51,7 @@ class Ghost extends Player {
 
     acceleration.normalize();
     acceleration.mult(0.3);
-    if (dist(gLoc.x, gLoc.y, PumpkinGhost.get(1).pLoc.x, PumpkinGhost.get(1).pLoc.y) < maxMoveDistance) {
+    if (dist(gLoc.x, gLoc.y, GhostPumpkin.get(1).pLoc.x, GhostPumpkin.get(1).pLoc.y) < maxMoveDistance) {
       if (dist(gLoc.x, gLoc.y, mouseX, mouseY)>40) {
         velocity.x += acceleration.x;
         velocity.y += acceleration.y;

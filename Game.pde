@@ -8,8 +8,8 @@ class Game {
   }
 
   void startUp() {
-    PumpkinGhost.add(new Ghost(location, 40));
-    PumpkinGhost.add(new Pumpkin(location, 70));
+    GhostPumpkin.add(new Ghost(location, 40));
+    GhostPumpkin.add(new Pumpkin(location, 70));
     //ItemList.add(new Chandelier(500, 500));
     //humanList.add(new Human(400, 650, 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
   }
@@ -24,7 +24,7 @@ class Game {
       i.display();
     }
 
-    for (Player pg : PumpkinGhost) {
+    for (Player pg : GhostPumpkin) {
       pg.display();
       if (!gameOver) pg.update();
     }
@@ -58,7 +58,7 @@ class Game {
   }
 
   void keyPressed() {
-    for (Player pg : PumpkinGhost) {
+    for (Player pg : GhostPumpkin) {
       pg.keyPressed();
     }
     if (key == 'e' || key == 'E') {
@@ -67,20 +67,20 @@ class Game {
   }
 
   void keyReleased() {
-    for (Player pg : PumpkinGhost) {
+    for (Player pg : GhostPumpkin) {
       pg.keyReleased();
     }
   }
 
   void changeStance() {
-    for (Player pg : PumpkinGhost) {
+    for (Player pg : GhostPumpkin) {
       pg.isGhost = !pg.isGhost;
     }
   }
 
   void makeText() {
     textSize(24);
-    if (PumpkinGhost.get(0).isGhost) {
+    if (GhostPumpkin.get(0).isGhost) {
       text("Ghost  -  Change with 'E'", 20, 20);
     } else {
       text("Pumpkin  -  Change with 'E'", 20, 20);
