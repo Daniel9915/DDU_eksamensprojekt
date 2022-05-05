@@ -2,9 +2,21 @@ class Pumpkin extends Player {
   float w;
   float speed = 1.5;
   
+  
+  float currentJumpPower = 1.5;
+  float defaultJumpPower = 1.5;
+  float floorLevel;
+  boolean inAir;
+  float defaultDelay = 2.5;
+  float delayCounter = 2.5;
+  boolean canJump = true;
+  float gravity = 0.1;
+  
+  
   Pumpkin(Coords _loc, float _w) {
     pLoc = new Coords(_loc.x, _loc.y);
     w = _w;
+    floorLevel = pLoc.y;
   }
 
   void display() {
@@ -26,15 +38,55 @@ class Pumpkin extends Player {
   }
 
   void move() {
+    if(!left && !right){
     isMoving = false;
-    if (left) {
-      pLoc.x = pLoc.x-speed;
-      isMoving = true;
+  }else{
+    isMoving = true;
+  }
+  
+  if(isMoving){
+    if(right){
+      if(canJump){
+        inAir = true;
+      }
+      pLoc.x += speed;
     }
-    if (right) {
-      pLoc.x = pLoc.x+speed;
-      isMoving = true;
+    if(left){
+      if(canJump){
+        inAir = true;
+      }
+      pLoc.x -= speed;
     }
+  }
+  
+  
+  if(!canJump){
+    delayCounter -= 0.5;
+    if(delayCounter < 0){
+      canJump = true;
+      delayCounter = defaultDelay;
+    }
+  }
+  
+  
+  if(inAir == true){
+    pLoc.y -= currentJumpPower;
+    currentJumpPower -= gravity;
+
+    if(pLoc.y > floorLevel){
+      inAir = false;
+      pLoc.y = floorLevel;
+      canJump = false;
+      currentJumpPower = defaultJumpPower;
+    }
+  }
+  if(isMoving){
+    if(inAir == false){
+      if(canJump){
+        inAir = true;
+      }
+    }
+  }
   }
 
   void keyPressed() {
