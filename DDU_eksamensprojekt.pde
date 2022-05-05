@@ -18,6 +18,9 @@ PImage chandelier;
 PImage vase;
 PImage vase_broken;
 PImage cup;
+PImage cup_broken;
+PImage glass;
+PImage glass_broken;
 PImage noImg;
 PImage BG;
 PImage check;
@@ -78,6 +81,9 @@ void loadData() {
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
   cup = loadImage("data/images/Cup.png");
+  cup_broken = loadImage("data/images/BrokenCup.png");
+  glass = loadImage("data/images/Glass.png");
+  glass_broken = loadImage("data/images/BrokenGlass.png");
   check = loadImage("data/images/check.png");
   menu = loadImage("data/images/menu.png");
   menu2 = loadImage("data/images/menu2.png");
@@ -136,9 +142,9 @@ void keyReleased() {
 }
 
 //Check if coordinates is in box
-boolean coordinatesBox(Coords point, float startX, float endX, float startY, float endY){
-  if(coordinatesBetween(point.x,startX,endX)){
-    if(coordinatesBetween(point.y,startY,endY)){
+boolean coordinatesBox(Coords point, float startX, float endX, float startY, float endY) {
+  if (coordinatesBetween(point.x, startX, endX)) {
+    if (coordinatesBetween(point.y, startY, endY)) {
       return true;
     }
   }
@@ -147,8 +153,8 @@ boolean coordinatesBox(Coords point, float startX, float endX, float startY, flo
 
 
 //Check if coordinate is between two others.
-boolean coordinatesBetween(float point, float start, float end){
-  if(point > start && point < end){
+boolean coordinatesBetween(float point, float start, float end) {
+  if (point > start && point < end) {
     return true;
   }
   return false;
