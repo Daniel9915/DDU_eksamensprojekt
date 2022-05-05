@@ -1,5 +1,5 @@
 //Item - Overklasse til ting som spøgelset kan interagere med
-class Item {
+class Item extends Game{
   float x, y, w, h;
   float angle = 0;
   float weight = 1.005;
@@ -31,7 +31,7 @@ class Item {
       pickUp();
     }
 
-    if (y>PumpkinGhost.get(1).pLoc.y && !broken) {
+    if (y>floorLevel && !broken) {
       shatter();
     }
   }

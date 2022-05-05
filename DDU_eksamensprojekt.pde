@@ -29,6 +29,7 @@ int numberOfLevels = 0;
 int completedDelay;
 boolean gameOver = false, gameWon = false;
 
+
 void setup() {
   imageMode(CENTER);
   rectMode(CENTER);

@@ -1,6 +1,6 @@
 Button start = new Button(600, 300, 1, "START");
 Button edit = new Button(600, 500, 2, "Edit Levels");
-
+Button back = new Button(40, 40, 50, 50, 0, "<");
 
 void menuDraw() {
   image(menu, width/2, height/2, width, height);
@@ -29,4 +29,7 @@ void levelSelect() {
     }
     i++;
   }
+  
+  back.display();
+  
 }

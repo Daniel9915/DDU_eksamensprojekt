@@ -121,7 +121,7 @@ class Human extends Game {
     }
     if (!left) {
       humanImg = humanImgesH.get(imgIndex%7);
-      if(scaredCounter > 100){
+      if (scaredCounter > 100) {
         humanImg = humanImgesRunH.get(imgIndex%6);
         waitTime = -1;
       }

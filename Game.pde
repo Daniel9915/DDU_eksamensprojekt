@@ -1,7 +1,9 @@
 class Game {
   boolean gameRunning = false; //Game running when it's not in menu
-  Coords location = new Coords(200, 700);
   ArrayList<Human> humanList = new ArrayList<Human>();
+  
+  float floorLevel = 700;
+  Coords location = new Coords(200, floorLevel);
   Game() {
   }
 
@@ -13,6 +15,8 @@ class Game {
   }
 
   void run() {
+    //translate(width/4-PumpkinGhost.get(1).pLoc.x/2, 0);
+    //image(BG, width/2, (height/2-height/6)-20, width*1.5, height*1.5);
     image(BG, width/2, height/2);
     //textAlign(CORNER);
 
@@ -46,8 +50,8 @@ class Game {
       textAlign(CENTER);
       text("Level Completed", width/2, height/2);
       pop();
-      
-      if(completedDelay<frameCount){
+
+      if (completedDelay<frameCount) {
         scene = 1;
       }
     }
