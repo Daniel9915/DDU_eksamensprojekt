@@ -21,7 +21,6 @@ class Pumpkin extends Player {
 
   void display() {
     image(pumpkinImg, pLoc.x, pLoc.y, w, w);
-
     push();
     noFill();
     strokeWeight(2);

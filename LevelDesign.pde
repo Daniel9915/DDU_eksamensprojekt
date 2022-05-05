@@ -134,4 +134,5 @@ void levelEditSelect() {
     b.setScene = 3;
     b.display();
   }
+  back.display();
 }

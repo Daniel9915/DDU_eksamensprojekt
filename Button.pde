@@ -1,18 +1,29 @@
 
 class Button {
-  int x, y, setScene;
+  int x, y, w, h, setScene;
   String text;
+
+  Button(int x_, int y_, int w_ , int h_ ,int scene_, String text_) {
+    x = x_;
+    y = y_;
+    w = w_;
+    h = h_;
+    setScene = scene_;
+    text = text_;
+  }
 
   Button(int x_, int y_, int scene_, String text_) {
     x = x_;
     y = y_;
+    w = 300;
+    h = 150;
     setScene = scene_;
     text = text_;
   }
 
   void display() {
-    fill(250,145,0);
-    image(button, x, y, 300, 150);
+    fill(250, 145, 0);
+    image(button, x, y, w, h);
     fill(0);
     textSize(40);
     text(text, x, y+13);
