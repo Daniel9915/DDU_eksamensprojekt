@@ -10,12 +10,6 @@ void levelDesignDraw() {
   image(BG, width/2, height/2);
   image(house, width/2, (height/2)-40);
   
-  println("Item Names:");
-  for(Item i: levelItems){
-    println(i.itemName);
-  }
-  println("");
-  
   if (spawnSet && item == 0) {
     item = 1;
   }
