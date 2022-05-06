@@ -36,7 +36,6 @@ class Game {
       h.display();
       if (!gameOver) h.update();
     }
-    makeText();
 
     if (gameOver) {
       push();
@@ -83,15 +82,6 @@ class Game {
   void changeStance() {
     for (Player pg : GhostPumpkin) {
       pg.isGhost = !pg.isGhost;
-    }
-  }
-
-  void makeText() {
-    textSize(24);
-    if (GhostPumpkin.get(0).isGhost) {
-      text("Ghost  -  Change with 'E'", 20, 20);
-    } else {
-      text("Pumpkin  -  Change with 'E'", 20, 20);
     }
   }
 }
