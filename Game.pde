@@ -1,9 +1,14 @@
 class Game {
   boolean gameRunning = false; //Game running when it's not in menu
   ArrayList<Human> humanList = new ArrayList<Human>();
+<<<<<<< HEAD
   
   
+=======
+
+>>>>>>> 4875584478abde003cc2d3eae915e6230b3245bb
   float floorLevel = 700;
+  boolean tutorial = true;
   Coords location = new Coords(200, floorLevel);
   Game() {
   }
@@ -16,10 +21,11 @@ class Game {
   }
 
   void run() {
+
     //translate(width/4-GhostPumpkin.get(1).pLoc.x/2, 0);
     //image(BG, width/2, (height/2-height/6)-20, width*1.5, height*1.5);
     image(BG, width/2, height/2);
-    image(house,width/2,(height/2)-40);
+    image(house, width/2, (height/2)-40);
     //textAlign(CORNER);
 
     for (Item i : levelItems) {
@@ -56,6 +62,11 @@ class Game {
       if (completedDelay<frameCount) {
         scene = 1;
       }
+    }
+
+    if (tutorial) {
+      image(button, width/2, height/2, 500, 300);
+      image(tutorial1,width/2, height/2);
     }
   }
 

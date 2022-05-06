@@ -16,6 +16,8 @@ PImage ghostImg, pumpkinImg, chandelier,
 vase, vase_broken, cup, cup_broken, glass, glass_broken, 
 noImg, BG, check, menu, menu2, button, house, stairs;
 
+PImage tutorial1;
+
 int scene = 0;
 int numberOfLevels = 0;
 int completedDelay;
@@ -81,7 +83,11 @@ void loadData() {
   house = loadImage("data/images/houseLQ.png");
   noImg = loadImage("data/images/noImg.png");
   BG = loadImage("data/images/BackgroundLowerQual.png");
+<<<<<<< HEAD
   stairs = loadImage("data/images/stairDown.png");
+=======
+  tutorial1 = loadImage("data/images/tutorial1.png");
+>>>>>>> 4875584478abde003cc2d3eae915e6230b3245bb
 
   for (int i = 0; i<16; i++) {
     if (i<8)
@@ -95,7 +101,7 @@ void loadData() {
     else
       humanImgesRunH.add(loadImage("data/images/R"+(i-7)+"H.png"));
   }
-  
+
 
   addAllItems();
 
@@ -121,6 +127,7 @@ void loadData() {
 }
 
 void keyPressed() {
+  game.tutorial = false;
   game.keyPressed();
   if (scene == 3) {
     levelDesignKeys();
