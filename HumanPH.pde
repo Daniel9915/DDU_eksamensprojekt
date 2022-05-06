@@ -1,11 +1,13 @@
 class HumanPlace extends Item {
-  String itemName = "Human";
+  
 
   HumanPlace(float _x, float _y, float _w, float _h, PImage _image) {
     super(_x, _y, _w, _h, _image);
+    itemName = "Human";
   }
   HumanPlace(float _x, float _y) {
     super(_x, _y, 89, 180, humanImges.get(7));
+    itemName = "Human";
   }
 
   void display() {

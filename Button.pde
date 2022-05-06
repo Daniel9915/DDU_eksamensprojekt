@@ -1,4 +1,3 @@
-
 class Button {
   int x, y, w, h, setScene;
   String text;

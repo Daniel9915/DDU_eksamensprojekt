@@ -8,12 +8,14 @@ class Key extends Item {
     yUp = y-10;
     yDown = y+10;
     velocity.y = 1;
+    itemName = "Key";
   }
   Key(float _x, float _y) {
     super(_x, _y, 30, 30, noImg);
     yUp = y-10;
     yDown = y+10;
     velocity.y = 1;
+    itemName = "Key";
   }
 
   void display() {
