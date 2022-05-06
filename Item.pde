@@ -10,6 +10,7 @@ class Item extends Game{
   PImage image1;
   PImage image2;
   boolean pickedUp = false, broken = false;
+  String itemName = "Undefined";
 
   Item(float _x, float _y, float _w, float _h, PImage _image) {
     x = _x;

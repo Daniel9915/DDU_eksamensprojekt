@@ -9,6 +9,8 @@ boolean graveSet = false;
 void levelDesignDraw() {
   image(BG, width/2, height/2);
   image(house, width/2, (height/2)-40);
+  
+  
 
   if (spawnSet && item == 0) {
     item = 1;

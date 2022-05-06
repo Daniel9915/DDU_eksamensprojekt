@@ -154,7 +154,6 @@ boolean coordinatesBox(Coords point, float startX, float endX, float startY, flo
   return false;
 }
 
-
 //Check if coordinate is between two others.
 boolean coordinatesBetween(float point, float start, float end) {
   if (point > start && point < end) {

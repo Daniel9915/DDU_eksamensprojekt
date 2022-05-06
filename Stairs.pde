@@ -1,8 +1,6 @@
 class Stairs extends Item {
 
-  Stairs(float _x, float _y, float _w, float _h, PImage _image) {
-    super(_x, _y, _w, _h, _image);
-  }
+  String itemName = "Stairs";
   Stairs(float _x, float _y) {
     super(_x, _y, 100, 200, noImg);
   }
@@ -11,6 +9,7 @@ class Stairs extends Item {
     push();
     rectMode(CENTER);
     rect(x, y, w, h);
+    
     //square(locTwo.x, locTwo.y, width);
     pop();
   }
