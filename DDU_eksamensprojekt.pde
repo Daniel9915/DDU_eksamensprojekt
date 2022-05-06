@@ -33,6 +33,7 @@ int scene = 0;
 int numberOfLevels = 0;
 int completedDelay;
 boolean gameOver = false, gameWon = false;
+boolean keyCollected = false;
 
 
 void setup() {

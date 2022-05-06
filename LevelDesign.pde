@@ -67,6 +67,8 @@ void addNew() {
       levelItems.add(new Vase(mouseX, mouseY));
   } else if (allItems.get(item) instanceof HumanPlace) {
     levelItems.add(new HumanPlace(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Key) {
+    levelItems.add(new Key(mouseX, mouseY));
   } else if (allItems.get(item) instanceof Stairs) {
     levelItems.add(new Stairs(mouseX, mouseY));
   }
@@ -96,6 +98,8 @@ void itemText() {
     }
   } else if (allItems.get(item) instanceof HumanPlace) {
     temp = "Human";
+  } else if (allItems.get(item) instanceof Key) {
+    temp = "Key";
   }
   text(temp, mouseX, mouseY-50);
 }
@@ -120,6 +124,7 @@ void addAllItems() {
   allItems.add(new Stairs(0, 0));
   allItems.add(new Glass(0, 0));
   allItems.add(new Cup(0, 0));
+  allItems.add(new Key(0, 0));
 }
 
 void loadLevel() {
@@ -159,6 +164,8 @@ void loadLevel() {
           levelItems.add(new Glass(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==8) {
           levelItems.add(new Cup(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==9) {
+          levelItems.add(new Key(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==5) {
           if (scene == 3) {
             levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
