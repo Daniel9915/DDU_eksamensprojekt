@@ -1,7 +1,12 @@
 class Game {
   boolean gameRunning = false; //Game running when it's not in menu
   ArrayList<Human> humanList = new ArrayList<Human>();
+<<<<<<< HEAD
+  
+  
+=======
 
+>>>>>>> 4875584478abde003cc2d3eae915e6230b3245bb
   float floorLevel = 700;
   boolean tutorial = true;
   Coords location = new Coords(200, floorLevel);
@@ -71,11 +76,17 @@ class Game {
     if (key == 'e' || key == 'E') {
       changeStance();
     }
+    if(key == 'w' || key == 'W'){
+      stairTeleport = true;
+    }
   }
 
   void keyReleased() {
     for (Player pg : GhostPumpkin) {
       pg.keyReleased();
+    }
+    if(key == 'w' || key == 'W'){
+      stairTeleport = false;
     }
   }
 

@@ -1,6 +1,6 @@
 class Pumpkin extends Player {
   float w;
-  float speed = 1.5;
+  float speed = 2.5;
   
   
   float currentJumpPower = 1.5;

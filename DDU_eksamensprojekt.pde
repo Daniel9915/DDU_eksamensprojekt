@@ -12,22 +12,9 @@ boolean[] levelsCompleted;
 
 PFont font;
 
-PImage ghostImg;
-PImage pumpkinImg;
-PImage chandelier;
-PImage vase;
-PImage vase_broken;
-PImage cup;
-PImage cup_broken;
-PImage glass;
-PImage glass_broken;
-PImage noImg;
-PImage BG;
-PImage check;
-PImage menu;
-PImage menu2;
-PImage button;
-PImage house;
+PImage ghostImg, pumpkinImg, chandelier, 
+vase, vase_broken, cup, cup_broken, glass, glass_broken, 
+noImg, BG, check, menu, menu2, button, house, stairs;
 
 PImage tutorial1;
 
@@ -36,6 +23,7 @@ int numberOfLevels = 0;
 int completedDelay;
 boolean gameOver = false, gameWon = false;
 boolean keyCollected = false;
+boolean stairTeleport = false;
 
 
 void setup() {
@@ -95,7 +83,11 @@ void loadData() {
   house = loadImage("data/images/houseLQ.png");
   noImg = loadImage("data/images/noImg.png");
   BG = loadImage("data/images/BackgroundLowerQual.png");
+<<<<<<< HEAD
+  stairs = loadImage("data/images/stairDown.png");
+=======
   tutorial1 = loadImage("data/images/tutorial1.png");
+>>>>>>> 4875584478abde003cc2d3eae915e6230b3245bb
 
   for (int i = 0; i<16; i++) {
     if (i<8)
