@@ -29,6 +29,8 @@ PImage menu2;
 PImage button;
 PImage house;
 
+PImage tutorial1;
+
 int scene = 0;
 int numberOfLevels = 0;
 int completedDelay;
@@ -93,6 +95,7 @@ void loadData() {
   house = loadImage("data/images/houseLQ.png");
   noImg = loadImage("data/images/noImg.png");
   BG = loadImage("data/images/BackgroundLowerQual.png");
+  tutorial1 = loadImage("data/images/tutorial1.png");
 
   for (int i = 0; i<16; i++) {
     if (i<8)
@@ -106,7 +109,7 @@ void loadData() {
     else
       humanImgesRunH.add(loadImage("data/images/R"+(i-7)+"H.png"));
   }
-  
+
 
   addAllItems();
 
@@ -132,6 +135,7 @@ void loadData() {
 }
 
 void keyPressed() {
+  game.tutorial = false;
   game.keyPressed();
   if (scene == 3) {
     levelDesignKeys();
