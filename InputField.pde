@@ -23,6 +23,7 @@ class InputField {
         clicked = true;
       }
     }
+    textSize(42);
 
     if (tempText.length()>0) {
       fill(0);
