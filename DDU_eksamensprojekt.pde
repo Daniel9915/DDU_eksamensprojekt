@@ -14,7 +14,7 @@ PFont font;
 
 PImage ghostImg, pumpkinImg, chandelier, 
   vase, vase_broken, cup, cup_broken, glass, glass_broken, 
-  noImg, BG, check, menu, menu2, button, house, stairs;
+  noImg, BG, check, menu, menu2, button, house, stairs, grave, keyImg, tv;
 
 PImage tutorial1;
 
@@ -35,7 +35,6 @@ void setup() {
   loadData();
   game.startUp();
   loadLevel();
-  
 }
 
 void draw() {
@@ -90,6 +89,10 @@ void loadData() {
   BG = loadImage("data/images/BackgroundLowerQual.png");
   stairs = loadImage("data/images/stairDown.png");
   tutorial1 = loadImage("data/images/tutorial1.png");
+  grave = loadImage("data/images/Grave.png");
+  keyImg = loadImage("data/images/Key.png");
+  tv = loadImage("data/images/TV.png");
+
 
   for (int i = 0; i<16; i++) {
     if (i<8)

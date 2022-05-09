@@ -6,7 +6,7 @@ class Grave extends Item {
     itemName = "Grave";
   }
   Grave(float _x, float _y) {
-    super(_x, _y, 70, 70, noImg);
+    super(_x, _y, 70, 80, grave);
     itemName = "Grave";
   }
 

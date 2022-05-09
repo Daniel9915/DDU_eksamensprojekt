@@ -11,7 +11,7 @@ class Key extends Item {
     itemName = "Key";
   }
   Key(float _x, float _y) {
-    super(_x, _y, 30, 30, noImg);
+    super(_x, _y, 50, 30, keyImg);
     yUp = y-10;
     yDown = y+10;
     velocity.y = 1;

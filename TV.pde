@@ -6,7 +6,7 @@ class Tv extends Item {
     itemName = "Tv";
   }
   Tv(float _x, float _y) {
-    super(_x, _y, 50, 50, noImg);
+    super(_x, _y, 100, 100, tv);
     itemName = "Tv";
   }
 

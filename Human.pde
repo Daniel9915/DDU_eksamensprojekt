@@ -16,7 +16,7 @@ class Human extends Game {
 
   float attackRange = 40;
   boolean isInAttackRange = false;
-  float runSpeed = 2;
+  float runSpeed = 3;
 
   Human(float _x, float _y, float _w, float _h, float _leftWalk, float _rightWalk, float _viewDistance, float _speed, PImage _humanImg) {
     x = _x;
