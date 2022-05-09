@@ -5,7 +5,7 @@ InputField password = new InputField(600, 450, "Password");
 
 
 String encrypt(String input, int givenOfset) {
-  int ofset = (minute()%25)+1; 
+  int ofset = (minute()%26)+1; 
   if (givenOfset > 0) {
     ofset = givenOfset;
   }
