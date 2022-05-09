@@ -39,16 +39,16 @@ class Stairs extends Item {
       if(isInBox()){
         if(isBottomStair){
           println("Bottom stair");
-          GhostPumpkin.get(1).pLoc.x = higherXValue;
-          GhostPumpkin.get(1).pLoc.y = higherYValue+(w/2)+10;
+          GhostPumpkin.get(1).pLoc.x = lesserXValue;
+          GhostPumpkin.get(1).pLoc.y = lesserYValue+(w/2)+10;
           
           GhostPumpkin.get(1).inAir = true;
           stairTeleportReleased = false;
-        }
-        if(!isBottomStair){
+        }else{
           println("Top stair");
-          GhostPumpkin.get(1).pLoc.x = lesserXValue;
-          GhostPumpkin.get(1).pLoc.y = lesserYValue+(w/2)+10;
+          GhostPumpkin.get(1).pLoc.x = higherXValue;
+          GhostPumpkin.get(1).pLoc.y = higherYValue+(w/2)+10;
+          
           GhostPumpkin.get(1).inAir = true;
           stairTeleportReleased = false;
         }
@@ -94,8 +94,8 @@ class Stairs extends Item {
     }else{
       lesserYValue = tempYOne;
       lesserXValue = tempXOne;
-      higherYValue = tempYOne;
-      higherXValue = tempXOne;
+      higherYValue = tempYTwo;
+      higherXValue = tempXTwo;
     }
     
     //assign top or bottom boolean
