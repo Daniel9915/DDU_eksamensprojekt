@@ -1,7 +1,7 @@
 char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 boolean creatingUser = false;
-InputField username = new InputField(600, 200, "Username");
-InputField password = new InputField(600, 400, "Password");
+InputField username = new InputField(600, 250, "Username");
+InputField password = new InputField(600, 450, "Password");
 
 
 String encrypt(String input, int givenOfset) {
@@ -32,9 +32,11 @@ String encrypt(String input, int givenOfset) {
 
 
 
-void signIn() {
-
+void signIn() {  
   image(menu2, width/2, height/2, width, height);
+  fill(255);
+  textSize(60);
+  text("Sign in", width/2, 100);
 
   username.display();
   password.display();
@@ -43,20 +45,23 @@ void signIn() {
 
 
 void logIn() {
-
-  if ( Data.connect() ) {
-    Data.query( "SELECT Name, Password, Completed FROM Users;" );
-    while (Data.next()) {
-      if (Data.getString("Name").equals(username.tempText)) {
-        if (Data.getString("Password").equals(encrypt(password.tempText, (Data.getString("Password").charAt(0))-48))) {
-          signedIn = true;
-          for (int i = 0; i < Data.getInt("Completed"); i++) {
-            levelsCompleted[i] = true;
+  if (!creatingUser) {
+    if ( Data.connect() ) {
+      Data.query( "SELECT Name, Password, Completed FROM Users;" );
+      while (Data.next()) {
+        if (Data.getString("Name").equals(username.tempText)) {
+          if (Data.getString("Password").equals(encrypt(password.tempText, (Data.getString("Password").charAt(0))-48))) {
+            signedIn = true;
+            for (int i = 0; i < Data.getInt("Completed"); i++) {
+              levelsCompleted[i] = true;
+            }
+            scene = 0;
           }
-          scene = 0;
         }
       }
     }
+  } else {
+    newUser(username.tempText, password.tempText);
   }
 }
 
