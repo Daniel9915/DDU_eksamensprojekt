@@ -9,7 +9,7 @@ boolean graveSet = false;
 void levelDesignDraw() {
   image(BG, width/2, height/2);
   image(house, width/2, (height/2)-40);
-  
+
   if (spawnSet && item == 0) {
     item = 1;
   }
@@ -20,6 +20,19 @@ void levelDesignDraw() {
   for (Item t : levelItems) {
     t.display();
   }
+
+  int l = 0;
+  textSize(12);
+  strokeWeight(3);
+  for (Item t : allItems) {
+    fill(250, 145, 0, 100);
+    rect(70*l+35, 13, 70, 25, 5);
+    fill(0);
+    text(t.itemName, 70*l+35, 15);
+    text(l, 70*l+8, 22);
+    l++;
+  }
+  textSize(32);
 
   allItems.get(item).x = mouseX;
   allItems.get(item).y = mouseY;

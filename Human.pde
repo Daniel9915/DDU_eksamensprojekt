@@ -10,7 +10,8 @@ class Human extends Game {
   boolean hasDetectedPumpkin = false;
 
   boolean left = false;
-  float scaredCounter = 0;  //0 to 100
+  float scaredCounter = 0;  
+  float scaredMax = random(50,200);
   float waitTime = 0;
 
   float attackRange = 40;
@@ -35,7 +36,7 @@ class Human extends Game {
 
   void update() {
 
-    if (scaredCounter>100) {
+    if (scaredCounter>scaredMax) {
       rightWalk = width+viewDistance+50;
       left = false;
       speed = runSpeed;
@@ -58,7 +59,7 @@ class Human extends Game {
   void detect() {
     if (GhostPumpkin.get(1).isGhost == false) {
       if (GhostPumpkin.get(1).isMoving == true) {
-        if (scaredCounter != 100) {
+        if (scaredCounter < scaredMax) {
           if ((left && GhostPumpkin.get(1).pLoc.x > x-viewDistance && GhostPumpkin.get(1).pLoc.x < x-attackRange) || (!left && GhostPumpkin.get(1).pLoc.x < x+viewDistance && GhostPumpkin.get(1).pLoc.x > x+attackRange)) {
             hasDetectedPumpkin = true;
           }
@@ -121,7 +122,7 @@ class Human extends Game {
     }
     if (!left) {
       humanImg = humanImgesH.get(imgIndex%7);
-      if (scaredCounter > 100) {
+      if (scaredCounter > scaredMax) {
         humanImg = humanImgesRunH.get(imgIndex%6);
         waitTime = -1;
       }

@@ -83,11 +83,8 @@ void loadData() {
   house = loadImage("data/images/houseLQ.png");
   noImg = loadImage("data/images/noImg.png");
   BG = loadImage("data/images/BackgroundLowerQual.png");
-<<<<<<< HEAD
   stairs = loadImage("data/images/stairDown.png");
-=======
   tutorial1 = loadImage("data/images/tutorial1.png");
->>>>>>> 4875584478abde003cc2d3eae915e6230b3245bb
 
   for (int i = 0; i<16; i++) {
     if (i<8)

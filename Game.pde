@@ -1,12 +1,6 @@
 class Game {
   boolean gameRunning = false; //Game running when it's not in menu
   ArrayList<Human> humanList = new ArrayList<Human>();
-<<<<<<< HEAD
-  
-  
-=======
-
->>>>>>> 4875584478abde003cc2d3eae915e6230b3245bb
   float floorLevel = 700;
   boolean tutorial = true;
   Coords location = new Coords(200, floorLevel);
