@@ -13,8 +13,8 @@ boolean[] levelsCompleted;
 PFont font;
 
 PImage ghostImg, pumpkinImg, chandelier, 
-vase, vase_broken, cup, cup_broken, glass, glass_broken, 
-noImg, BG, check, menu, menu2, button, house, stairs;
+  vase, vase_broken, cup, cup_broken, glass, glass_broken, 
+  noImg, BG, check, menu, menu2, button, house, stairs;
 
 PImage tutorial1;
 
@@ -35,6 +35,7 @@ void setup() {
   loadData();
   game.startUp();
   loadLevel();
+  
 }
 
 void draw() {
@@ -58,6 +59,10 @@ void draw() {
 
   case 4:
     game.run();
+    break;
+
+  case 5:
+    signIn();
     break;
   }
 }
