@@ -76,22 +76,23 @@ void loadData() {
   chandelier = loadImage("data/images/chandelier.png");
   vase = loadImage("data/images/vase.png");
   vase_broken = loadImage("data/images/VaseBroken.png");
-  cup = loadImage("data/images/Cup.png");
-  cup_broken = loadImage("data/images/BrokenCup.png");
-  glass = loadImage("data/images/Glass.png");
-  glass_broken = loadImage("data/images/BrokenGlass.png");
+  cup = loadImage("data/images/cup.png");
+  cup_broken = loadImage("data/images/brokenCup.png");
+  glass = loadImage("data/images/glass.png");
+  glass_broken = loadImage("data/images/brokenGlass.png");
   check = loadImage("data/images/check.png");
   menu = loadImage("data/images/menu.png");
   menu2 = loadImage("data/images/menu2.png");
   button = loadImage("data/images/button.png");
-  house = loadImage("data/images/houseLQ.png");
+  
   noImg = loadImage("data/images/noImg.png");
-  BG = loadImage("data/images/BackgroundLowerQual.png");
+  BG = loadImage("data/images/backgroundLowerQual.png");
   stairs = loadImage("data/images/stairDown.png");
   tutorial1 = loadImage("data/images/tutorial1.png");
-  grave = loadImage("data/images/Grave.png");
-  keyImg = loadImage("data/images/Key.png");
+  grave = loadImage("data/images/grave.png");
+  keyImg = loadImage("data/images/key.png");
   tv = loadImage("data/images/TV.png");
+  house = loadImage("data/images/houseLQHitbox.png");
   tv_broken1 = loadImage("data/images/TVStatic1.png");
   tv_broken2 = loadImage("data/images/TVStatic2.png");
 
