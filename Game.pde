@@ -19,16 +19,20 @@ class Game {
     //translate(width/4-GhostPumpkin.get(1).pLoc.x/2, 0);
     //image(BG, width/2, (height/2-height/6)-20, width*1.5, height*1.5);
     image(BG, width/2, height/2);
-    image(house, width/2, (height/2)-40);
+    image(houseHitbox, width/2, (height/2)-40);
     //textAlign(CORNER);
-
+    
+    for (Player pg : GhostPumpkin) {
+      if (!gameOver) pg.update();
+    }
+    
+    image(house, width/2, (height/2)-40);
     for (Item i : levelItems) {
       i.display();
     }
 
     for (Player pg : GhostPumpkin) {
       pg.display();
-      if (!gameOver) pg.update();
     }
 
     for (Human h : humanList) {

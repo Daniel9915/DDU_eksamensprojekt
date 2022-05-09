@@ -35,16 +35,16 @@ class Stairs extends Item {
   void movePlayer() {}
   
   void teleport(){
-    //stairTeleport = pressing w 
-    //println(topXValue,topYValue,bottomXValue,bottomYValue);
     if(stairTeleport){
       if(isInBox()){
         if(isBottomStair){
           GhostPumpkin.get(1).pLoc.x = topXValue;
-          GhostPumpkin.get(1).pLoc.y = topYValue;
+          GhostPumpkin.get(1).pLoc.y = topYValue+(w/2);
+          GhostPumpkin.get(1).inAir = true;
         }else{
           GhostPumpkin.get(1).pLoc.x = bottomXValue;
-          GhostPumpkin.get(1).pLoc.y = bottomYValue;
+          GhostPumpkin.get(1).pLoc.y = bottomYValue+(w/2);
+          GhostPumpkin.get(1).inAir = true;
         }
       }
     }
