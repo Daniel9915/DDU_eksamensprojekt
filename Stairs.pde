@@ -22,10 +22,10 @@ class Stairs extends Item {
     if(!foundFirst || !foundSecond){
       findPlaceInArray();
       bottomOrTopStair();
-      for(Item e: levelItems){
-        println(e.itemName);
-        
-      }
+     // for(Item e: levelItems){
+     //   println(e.itemName);
+     //   
+     // }
       println(arraySpotOne, arraySpotTwo);
       println();
     }
@@ -53,10 +53,8 @@ class Stairs extends Item {
   void findPlaceInArray(){
     for(int i = 0; i < levelItems.size(); i++){
       if(levelItems.get(i).itemName == "Stairs"){
-        println("first");
         if(!foundFirst){
           arraySpotOne = i;
-          println("Never in here???");
           foundFirst = true;
         }else if(!foundSecond){
           arraySpotTwo = i;
