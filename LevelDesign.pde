@@ -139,6 +139,7 @@ void addAllItems() {
 }
 
 void loadLevel() {
+  keyCollected = false;
   gameOver = false;
   gameWon = false;
   spawnSet = false;

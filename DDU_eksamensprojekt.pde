@@ -137,8 +137,15 @@ void keyPressed() {
   if (scene == 3) {
     levelDesignKeys();
   }
-  if (key == BACKSPACE) {
+  if (key == BACKSPACE && scene != 5) {
     scene = 0;
+  }
+  if(scene == 5){
+    username.type(key,keyCode);
+    password.type(key,keyCode);
+    
+    if(keyCode == ENTER)
+      logIn();
   }
 }
 
