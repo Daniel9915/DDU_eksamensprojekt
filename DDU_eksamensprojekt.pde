@@ -14,7 +14,7 @@ PFont font;
 
 PImage ghostImg, pumpkinImg, chandelier, 
   vase, vase_broken, cup, cup_broken, glass, glass_broken, 
-  noImg, BG, check, menu, menu2, button, house, stairs, grave, keyImg, tv,tv_broken1,tv_broken2,
+  noImg, BG, check, menu, menu2, button, house, stairsUp, stairsDown, grave, keyImg, tv,tv_broken1,tv_broken2,
   houseHitbox;
 
 PImage tutorial1;
@@ -25,6 +25,7 @@ int completedDelay;
 boolean gameOver = false, gameWon = false;
 boolean keyCollected = false;
 boolean stairTeleport = false;
+boolean stairTeleportReleased = true;
 
 
 void setup() {
@@ -87,7 +88,8 @@ void loadData() {
   button = loadImage("data/images/button.png");
   noImg = loadImage("data/images/noImg.png");
   BG = loadImage("data/images/backgroundLowerQual.png");
-  stairs = loadImage("data/images/stairDown.png");
+  stairsDown = loadImage("data/images/stairDown.png");
+  stairsUp = loadImage("data/images/stairUp.png");
   tutorial1 = loadImage("data/images/tutorial1.png");
   grave = loadImage("data/images/grave.png");
   keyImg = loadImage("data/images/key.png");

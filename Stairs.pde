@@ -6,10 +6,10 @@ class Stairs extends Item {
   
   boolean isBottomStair = false;
   
-  float bottomYValue = 0;
-  float bottomXValue = 0;
-  float topYValue = 0;
-  float topXValue = 0;
+  float lesserYValue = 0;
+  float lesserXValue = 0;
+  float higherYValue = 0;
+  float higherXValue = 0;
   
   Stairs(float _x, float _y) {
     super(_x, _y, 100, 200, noImg);
@@ -17,15 +17,15 @@ class Stairs extends Item {
   }
 
   void display() {
-    image(stairs, x, y, w, h);
+    if(isBottomStair){
+      image(stairsDown, x, y, w, h);
+    }else{
+      image(stairsUp, x, y, w, h);
+    }
     movePlayer();
     if(!foundFirst || !foundSecond){
       findPlaceInArray();
       bottomOrTopStair();
-     // for(Item e: levelItems){
-     //   println(e.itemName);
-     //   
-     // }
       println(arraySpotOne, arraySpotTwo);
       println();
     }
@@ -35,16 +35,22 @@ class Stairs extends Item {
   void movePlayer() {}
   
   void teleport(){
-    if(stairTeleport){
+    if(stairTeleport && stairTeleportReleased){
       if(isInBox()){
         if(isBottomStair){
-          GhostPumpkin.get(1).pLoc.x = topXValue;
-          GhostPumpkin.get(1).pLoc.y = topYValue+(w/2);
+          println("Bottom stair");
+          GhostPumpkin.get(1).pLoc.x = higherXValue;
+          GhostPumpkin.get(1).pLoc.y = higherYValue+(w/2)+10;
+          
           GhostPumpkin.get(1).inAir = true;
-        }else{
-          GhostPumpkin.get(1).pLoc.x = bottomXValue;
-          GhostPumpkin.get(1).pLoc.y = bottomYValue+(w/2);
+          stairTeleportReleased = false;
+        }
+        if(!isBottomStair){
+          println("Top stair");
+          GhostPumpkin.get(1).pLoc.x = lesserXValue;
+          GhostPumpkin.get(1).pLoc.y = lesserYValue+(w/2)+10;
           GhostPumpkin.get(1).inAir = true;
+          stairTeleportReleased = false;
         }
       }
     }
@@ -77,16 +83,26 @@ class Stairs extends Item {
     tempYTwo = levelItems.get(arraySpotTwo).y;
     tempXTwo = levelItems.get(arraySpotTwo).x;
     
+    //tempYOne = bottom stairs
     if(tempYOne > tempYTwo){
-      bottomYValue = tempYOne;
-      bottomXValue = tempXOne;
-      topYValue = tempYTwo;
-      topXValue = tempXTwo;
+      lesserYValue = tempYOne;
+      lesserXValue = tempXOne;
+      higherYValue = tempYTwo;
+      higherXValue = tempXTwo;
+    
+    //tempYOne = top stairs
     }else{
-      bottomYValue = tempYOne;
-      bottomXValue = tempXOne;
-      topYValue = tempYOne;
-      topXValue = tempXOne;
+      lesserYValue = tempYOne;
+      lesserXValue = tempXOne;
+      higherYValue = tempYOne;
+      higherXValue = tempXOne;
+    }
+    
+    //assign top or bottom boolean
+    if(x == lesserXValue && y == lesserYValue){
+      isBottomStair = false;
+    }else{
+      isBottomStair = true;
     }
     
   }

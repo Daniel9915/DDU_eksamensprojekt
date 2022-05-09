@@ -76,6 +76,7 @@ class Game {
     }
     if(key == 'w' || key == 'W'){
       stairTeleport = true;
+      
     }
   }
 
@@ -85,6 +86,7 @@ class Game {
     }
     if(key == 'w' || key == 'W'){
       stairTeleport = false;
+      stairTeleportReleased = true;
     }
   }
 
