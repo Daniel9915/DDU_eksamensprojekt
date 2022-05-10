@@ -75,4 +75,8 @@ class Item extends Game{
         activeImage = image2;
     }
   }
+  
+  void displayHitbox(){
+  
+  }
 }

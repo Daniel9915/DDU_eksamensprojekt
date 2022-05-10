@@ -1,6 +1,5 @@
-
 class Door extends Item {
-  boolean locked;
+  boolean isKeyDoor;
 
   Door(float _x, float _y, float _w, float _h, PImage _image) {
     super(_x, _y, _w, _h, _image);
@@ -9,5 +8,19 @@ class Door extends Item {
   Door(float _x, float _y) {
     super(_x, _y, 100, 200, noImg);
     itemName = "Door";
+  }
+  
+  void displayHitbox(){
+    if(isKeyDoor){
+      push();
+      fill(0,255,0);
+      rect(x,y,w,h);
+      pop();
+    }else{
+      push();
+      fill(0,0,255);
+      rect(x,y,w,h);
+      pop();
+    }
   }
 }

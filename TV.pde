@@ -13,10 +13,12 @@ class Tv extends Item {
   void display() {
 
     if (on) {
-      if (frameCount%20 == 0)
+      if (frameCount%20 == 0){
         activeImage = tv_broken1;
-      else if (frameCount%20 == 10)
+      }
+      else if (frameCount%20 == 10){
         activeImage = tv_broken2;
+      }
     }
 
     push();

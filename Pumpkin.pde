@@ -14,7 +14,8 @@ class Pumpkin extends Player {
   
   color wall = color(255,0,0);
   color floor = color(255);
-  color door = color(0,255,0);
+  color keyDoor = color(0,255,0);
+  color normalDoor = color(0,0,255);
 
 
   Pumpkin(Coords _loc, float _w) {
@@ -133,7 +134,7 @@ class Pumpkin extends Player {
   
   boolean doorRight(){
     color pixel = get(int(pLoc.x+(w/2)+speed),int(pLoc.y));
-    if(pixel == door){
+    if(pixel == keyDoor){
       return true;
     }
     return false;
@@ -141,7 +142,7 @@ class Pumpkin extends Player {
   
   boolean doorLeft(){
     color pixel = get(int(pLoc.x-(w/2)-speed),int(pLoc.y));
-    if(pixel == door){
+    if(pixel == keyDoor){
       return true;
     }
     return false;
