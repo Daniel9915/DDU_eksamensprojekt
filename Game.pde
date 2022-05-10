@@ -18,7 +18,6 @@ class Game {
 
   void run() {
     //HITBOXES RENDERED
-    image(BG, width/2, height/2);
     image(houseHitbox, width/2, (height/2)-40);
     
     for (Item i : levelItems) {
@@ -33,6 +32,7 @@ class Game {
     }
     
     //GRAPHICS RENDERED
+    image(BG, width/2, height/2);
     image(house, width/2, (height/2)-40);
     for (Item i : levelItems) {
       i.display();

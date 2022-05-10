@@ -10,11 +10,12 @@ class KeyDoor extends Door {
   }
   
   void display(){
-    //image(doorImage,x,y,w,h);
+    //image(doorSide2,x,y,w,h);
     push();
     fill(0,255,0);
     rect(x,y,w,h);
     pop();
+
   }
   
   void displayHitbox(){
