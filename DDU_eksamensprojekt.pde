@@ -94,11 +94,11 @@ void loadData() {
   tutorial1 = loadImage("data/images/tutorial1.png");
   grave = loadImage("data/images/grave.png");
   keyImg = loadImage("data/images/key.png");
-  tv = loadImage("data/images/TV.png");
+  tv = loadImage("data/images/tv.png");
   house = loadImage("data/images/houseLQ.png");
   houseHitbox = loadImage("data/images/houseLQHitbox.png");
-  tv_broken1 = loadImage("data/images/TVStatic1.png");
-  tv_broken2 = loadImage("data/images/TVStatic2.png");
+  tv_broken1 = loadImage("data/images/tvStatic1.png");
+  tv_broken2 = loadImage("data/images/tvStatic2.png");
 
 
   for (int i = 0; i<16; i++) {
