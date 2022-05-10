@@ -1,7 +1,7 @@
 class Chandelier extends Item {
   float angleAdder;
-  
-  
+
+
   Chandelier(float _x, float _y, float _w, float _h, PImage _image) {
     super(_x, _y, _w, _h, _image);
     itemName = "Chandelier";
@@ -36,7 +36,7 @@ class Chandelier extends Item {
       angleAdder = 0.1;
 
       for (Human h : game.humanList) {
-        if ((abs(x-h.x)/4)<50)
+        if ((abs(x-h.x)/4)<50 && y<h.y)
           h.scaredCounter += 50-(abs(x-h.x)/4);
       }
     }
