@@ -21,13 +21,15 @@ class Game {
     image(BG, width/2, height/2);
     image(houseHitbox, width/2, (height/2)-40);
     
+    for (Item i : levelItems) {
+      i.displayHitbox();
+    }
+    
     for (Player pg : GhostPumpkin) {
       if (!gameOver) pg.update();
     }
     
-    for (Item i : levelItems) {
-      i.displayHitbox();
-    }
+    
     
     //GRAPHICS RENDERED
     image(house, width/2, (height/2)-40);

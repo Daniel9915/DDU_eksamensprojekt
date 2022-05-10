@@ -8,4 +8,19 @@ class KeyDoor extends Door {
     super(_x, _y, 20, 150, noImg);
     itemName = "Door";
   }
+  
+  void display(){
+    //image(doorImage,x,y,w,h);
+    push();
+    fill(0,255,0);
+    rect(x,y,w,h);
+    pop();
+  }
+  
+  void displayHitbox(){
+    push();
+    fill(0,255,0);
+    rect(x,y,w,h);
+    pop();
+  }
 }

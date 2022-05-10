@@ -12,22 +12,15 @@ class Door extends Item {
   void display(){
     //image(doorImage,x,y,w,h);
     push();
-      fill(0,0,255);
-      rect(x,y,w,h);
-      pop();
+    fill(0,0,255);
+    rect(x,y,w,h);
+    pop();
   }
   
   void displayHitbox(){
-    if(isKeyDoor){
-      push();
-      fill(0,255,0);
-      rect(x,y,w,h);
-      pop();
-    }else{
-      push();
-      fill(0,0,255);
-      rect(x,y,w,h);
-      pop();
-    }
+    push();
+    fill(0,0,255);
+    rect(x,y,w,h);
+    pop();
   }
 }
