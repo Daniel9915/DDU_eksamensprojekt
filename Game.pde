@@ -23,13 +23,14 @@ class Game {
     
     for (Item i : levelItems) {
       i.displayHitbox();
+      i.checkHitbox();
     }
     
+    
+    //HITBOXES CHECKED
     for (Player pg : GhostPumpkin) {
       if (!gameOver) pg.update();
     }
-    
-    
     
     //GRAPHICS RENDERED
     image(house, width/2, (height/2)-40);
