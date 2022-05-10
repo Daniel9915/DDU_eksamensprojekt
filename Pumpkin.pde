@@ -53,7 +53,13 @@ class Pumpkin extends Player {
           inAir = true;
         }
         if(!wallRight()){
-          pLoc.x += speed;
+          if(!keyCollected){
+            if(!doorRight()){
+              pLoc.x += speed;
+            }
+          }else{
+            pLoc.x += speed;
+          }
         }
       }
       if (left) {
@@ -61,7 +67,13 @@ class Pumpkin extends Player {
           inAir = true;
         }
         if(!wallLeft()){
-          pLoc.x -= speed;
+          if(!keyCollected){
+            if(!doorLeft()){
+              pLoc.x -= speed;
+            }
+          }else{
+            pLoc.x -= speed;
+          }
         }
         
       }
@@ -114,6 +126,22 @@ class Pumpkin extends Player {
     color pixel = get(int(pLoc.x),int(pLoc.y+(w/2)));
     if(pixel == floor){
       //println("FLOOR");
+      return true;
+    }
+    return false;
+  }
+  
+  boolean doorRight(){
+    color pixel = get(int(pLoc.x+(w/2)+speed),int(pLoc.y));
+    if(pixel == door){
+      return true;
+    }
+    return false;
+  }
+  
+  boolean doorLeft(){
+    color pixel = get(int(pLoc.x-(w/2)-speed),int(pLoc.y));
+    if(pixel == door){
       return true;
     }
     return false;
