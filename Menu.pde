@@ -7,6 +7,7 @@ boolean signedIn = false;
 
 
 void menuDraw() {
+  creatingUser = false;
   image(menu, width/2, height/2, width, height);
   start.display();
   edit.display();
