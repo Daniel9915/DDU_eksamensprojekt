@@ -23,7 +23,8 @@ class Grave extends Item {
         levelsCompleted[currentLevelEdit-1] = true;
         if (signedIn && delay<frameCount) {
           Data.query( "SELECT Name, Password, Completed FROM Users;" );
-          String sql = "Update Users SET Completed = '" + Data.getInt("Completed")+1 + "' WHERE Name = '"+username.tempText+"';";
+          int insert = Data.getInt("Completed");
+          String sql = "Update Users SET Completed = '" + insert + "' WHERE Name = '"+username.tempText+"';";
           Data.execute(sql);
           delay = completedDelay+10;
         }

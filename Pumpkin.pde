@@ -113,7 +113,7 @@ class Pumpkin extends Player {
   boolean onFloor(){
     color pixel = get(int(pLoc.x),int(pLoc.y+(w/2)));
     if(pixel == floor){
-      println("FLOOR");
+      //println("FLOOR");
       return true;
     }
     return false;
