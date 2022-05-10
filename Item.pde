@@ -12,6 +12,7 @@ class Item extends Game {
   boolean pickedUp = false, broken = false;
   String itemName = "Undefined";
   boolean isKeyDoor;
+  color floor = color(255);
 
   Item(float _x, float _y, float _w, float _h, PImage _image) {
     x = _x;
@@ -31,10 +32,15 @@ class Item extends Game {
     }
     if (pickedUp && mousePressed && (mouseButton == LEFT) && velocity.y < 1.5) {
       pickUp();
-    }
-
-    if (y>floorLevel && !broken) {
-      shatter();
+    }    
+  }
+  
+  void checkHitbox(){
+    for(int i = int(y); i<y+velocity.y; i++){
+      if(get(int(x), i) == floor){
+        shatter();
+        y = i;
+      }
     }
   }
 

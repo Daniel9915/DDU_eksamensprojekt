@@ -35,4 +35,7 @@ class Tv extends Item {
       }
     }
   }
+  
+  void shatter(){
+  }
 }
