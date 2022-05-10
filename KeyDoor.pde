@@ -10,11 +10,14 @@ class KeyDoor extends Door {
   }
   
   void display(){
-    //image(doorSide2,x,y,w,h);
-    push();
-    fill(0,255,0);
-    rect(x,y,w,h);
-    pop();
+    if(!coordinatesBox(GhostPumpkin.get(1).pLoc, x-(w*2),x+(w*2),y-h,y+h)){
+      image(doorSide2,x,y,w,h);
+    }else{
+      push();
+      imageMode(CORNER);
+      image(doorOpen2,x-w/2,y-h/2,w*4,h);
+      pop();
+    }
 
   }
   

@@ -108,7 +108,7 @@ void loadData() {
   doorSide = loadImage("data/images/doorSide.png");
   doorOpen = loadImage("data/images/door.png");
   doorOpen2 = loadImage("data/images/door2.png");
-  //doorSide2 = loadImage("data/images/doorSide2.png");
+  doorSide2 = loadImage("data/images/doorSide2.png");
 
   for (int i = 0; i<16; i++) {
     if (i<8)
