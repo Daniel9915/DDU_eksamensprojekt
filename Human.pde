@@ -53,6 +53,7 @@ class Human extends Game {
       rightWalk = width+viewDistance+50;
       left = false;
       speed = runSpeed;
+      
     }
 
     move();
