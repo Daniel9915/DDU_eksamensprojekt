@@ -1,5 +1,5 @@
 //Item - Overklasse til ting som spøgelset kan interagere med
-class Item extends Game{
+class Item extends Game {
   float x, y, w, h;
   float angle = 0;
   float weight = 1.005;
@@ -11,6 +11,7 @@ class Item extends Game{
   PImage image2;
   boolean pickedUp = false, broken = false;
   String itemName = "Undefined";
+  boolean isKeyDoor;
 
   Item(float _x, float _y, float _w, float _h, PImage _image) {
     x = _x;
@@ -75,8 +76,7 @@ class Item extends Game{
         activeImage = image2;
     }
   }
-  
-  void displayHitbox(){
-  
+
+  void displayHitbox() {
   }
 }
