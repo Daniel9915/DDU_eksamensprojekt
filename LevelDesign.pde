@@ -86,6 +86,12 @@ void addNew() {
     levelItems.add(new Door(mouseX, mouseY));
   } else if (allItems.get(item) instanceof KeyDoor) {
     levelItems.add(new KeyDoor(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof KeyDoor) {
+    levelItems.add(new KeyDoor(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Tabel) {
+    levelItems.add(new Tabel(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Chair) {
+    levelItems.add(new Chair(mouseX, mouseY));
   }
   if ( Data.connect() ) {
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
@@ -119,6 +125,10 @@ void itemText() {
     temp = "Door";
     if (allItems.get(item) instanceof KeyDoor)
       temp = "Locked Door";
+  } else if (allItems.get(item) instanceof Tabel) {
+    temp = "Table";
+  } else if (allItems.get(item) instanceof Chair) {
+    temp = "Chair";
   }
   text(temp, mouseX, mouseY-50);
 }
@@ -128,12 +138,18 @@ void levelDesignKeys() {
     item = int(key-48);
   }
 
-  if (keyCode == 81) {
+  if (key == 'q') {
     if (item != 10)
       item = 10;
     else {
       item = 11;
     }
+  }
+  if (key == 'w') {
+    item = 12;
+  }
+  if (key == 'e') {
+    item = 13;
   }
   if (keyCode == ENTER) {
     scene = 0;
@@ -153,6 +169,8 @@ void addAllItems() {
   allItems.add(new Key(0, 0));
   allItems.add(new Door(0, 0));
   allItems.add(new KeyDoor(0, 0));
+  allItems.add(new Tabel(0, 0));
+  allItems.add(new Chair(0, 0));
 }
 
 void loadLevel() {
@@ -199,6 +217,10 @@ void loadLevel() {
           levelItems.add(new Door(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==11) {
           levelItems.add(new KeyDoor(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==12) {
+          levelItems.add(new Tabel(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==13) {
+          levelItems.add(new Chair(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==5) {
           if (scene == 3) {
             levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
