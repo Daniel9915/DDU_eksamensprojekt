@@ -67,7 +67,7 @@ class Item extends Game{
       velocity.mult(0);
 
       for (Human h : game.humanList) { // jo tættere et menneske er på en genstand, jo mere bliver han skræmt. Hvis afstanden er mere end 400px så sker der ikke noget.
-        if ((abs(x-h.x)/4)<100)
+        if ((abs(x-h.x)/4)<100 && abs(y-h.y) <100)
           h.scaredCounter += 100-(abs(x-h.x)/4);
       }
 

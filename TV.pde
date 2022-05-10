@@ -28,7 +28,7 @@ class Tv extends Item {
     if (!on) {
       on = true;
       for (Human h : game.humanList) { // jo tættere et menneske er på en genstand, jo mere bliver han skræmt. Hvis afstanden er mere end 400px så sker der ikke noget.
-        if ((abs(x-h.x)/4)<50)
+        if ((abs(x-h.x)/4)<50 && abs(y-h.y) <100)
           h.scaredCounter += 50-(abs(x-h.x)/4);
       }
     }
