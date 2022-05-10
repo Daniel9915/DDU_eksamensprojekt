@@ -61,7 +61,8 @@ class Human extends Game {
       if (GhostPumpkin.get(1).isMoving == true) {
         if (scaredCounter < scaredMax) {
           if ((left && GhostPumpkin.get(1).pLoc.x > x-viewDistance && GhostPumpkin.get(1).pLoc.x < x-attackRange) || (!left && GhostPumpkin.get(1).pLoc.x < x+viewDistance && GhostPumpkin.get(1).pLoc.x > x+attackRange)) {
-            hasDetectedPumpkin = true;
+            if (abs(GhostPumpkin.get(1).pLoc.y-y)<h/2)
+              hasDetectedPumpkin = true;
           }
         }
       }
