@@ -15,7 +15,7 @@ class Tv extends Item {
     if (on) {
       if (frameCount%20 == 0)
         activeImage = tv_broken1;
-      else if(frameCount%20 == 10)
+      else if (frameCount%20 == 10)
         activeImage = tv_broken2;
     }
 
@@ -25,6 +25,12 @@ class Tv extends Item {
     pop();
   }
   void interact() {
-    on = true;
+    if (!on) {
+      on = true;
+      for (Human h : game.humanList) { // jo tættere et menneske er på en genstand, jo mere bliver han skræmt. Hvis afstanden er mere end 400px så sker der ikke noget.
+        if ((abs(x-h.x)/4)<50)
+          h.scaredCounter += 50-(abs(x-h.x)/4);
+      }
+    }
   }
 }

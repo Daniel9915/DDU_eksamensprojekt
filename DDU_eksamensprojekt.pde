@@ -14,10 +14,10 @@ PFont font;
 
 PImage ghostImg, pumpkinImg, chandelier, 
   vase, vase_broken, cup, cup_broken, glass, glass_broken, 
-  noImg, BG, check, menu, menu2, button, house, stairsUp, stairsDown, grave, keyImg, tv,tv_broken1,tv_broken2,
-  houseHitbox;
+  noImg, BG, check, menu, menu2, button, house, stairsUp, stairsDown, grave, keyImg, tv, tv_broken1, tv_broken2, 
+  houseHitbox, scare1, scare2, scare3;
 
-PImage tutorial1;
+PImage tutorial1, tutorial2;
 
 int scene = 0;
 int numberOfLevels = 0;
@@ -92,6 +92,10 @@ void loadData() {
   stairsUp = loadImage("data/images/stairUp.png");
   BG = loadImage("data/images/backgroundLowerQual.png");
   tutorial1 = loadImage("data/images/tutorial1.png");
+  tutorial2 = loadImage("data/images/tutorial2.png");
+  scare1 = loadImage("data/images/scare1.png");
+  scare2 = loadImage("data/images/scare2.png");
+  scare3 = loadImage("data/images/scare3.png");
   grave = loadImage("data/images/grave.png");
   keyImg = loadImage("data/images/key.png");
   tv = loadImage("data/images/tv.png");
@@ -147,11 +151,11 @@ void keyPressed() {
   if (key == BACKSPACE && scene != 5) {
     scene = 0;
   }
-  if(scene == 5){
-    username.type(key,keyCode);
-    password.type(key,keyCode);
-    
-    if(keyCode == ENTER)
+  if (scene == 5) {
+    username.type(key, keyCode);
+    password.type(key, keyCode);
+
+    if (keyCode == ENTER)
       logIn();
   }
 }

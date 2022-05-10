@@ -3,6 +3,7 @@ class Game {
   ArrayList<Human> humanList = new ArrayList<Human>();
   float floorLevel = 700;
   boolean tutorial = true;
+  PImage tutorialShow;
   Coords location = new Coords(200, floorLevel);
   Game() {
   }
@@ -12,6 +13,7 @@ class Game {
     GhostPumpkin.add(new Pumpkin(location, 70));
     //ItemList.add(new Chandelier(500, 500));
     //humanList.add(new Human(400, 650, 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
+    tutorialShow = tutorial1;
   }
 
   void run() {
@@ -63,7 +65,10 @@ class Game {
 
     if (tutorial) {
       image(button, width/2, height/2, 500, 300);
-      image(tutorial1,width/2, height/2);
+      image(tutorialShow,width/2, height/2);
+      if(mousePressed){
+        tutorialShow = tutorial2;
+      }
     }
   }
 

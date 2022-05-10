@@ -5,13 +5,13 @@ class Human extends Game {
   float leftWalk, rightWalk;
   float viewDistance;
   float speed;
-  PImage humanImg;
+  PImage humanImg, scareImg;
   int imgIndex = 0;
   boolean hasDetectedPumpkin = false;
 
   boolean left = false;
   float scaredCounter = 0;  
-  float scaredMax = random(50,200);
+  float scaredMax = random(50, 200);
   float waitTime = 0;
 
   float attackRange = 40;
@@ -32,6 +32,19 @@ class Human extends Game {
 
   void display() {
     image(humanImg, x, y, w, h);
+
+    if (scaredCounter>scaredMax/3) {
+      scareImg = scare1;
+    }
+    if (scaredCounter>(scaredMax/3)*2) {
+      scareImg = scare2;
+    }
+    if (scaredCounter>scaredMax) {
+      scareImg = scare3;
+    }
+
+    if (scareImg != null)
+      image(scareImg, x, y-h/2,50,50);
   }
 
   void update() {

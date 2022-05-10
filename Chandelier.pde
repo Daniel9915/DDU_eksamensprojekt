@@ -36,8 +36,8 @@ class Chandelier extends Item {
       angleAdder = 0.1;
 
       for (Human h : game.humanList) {
-        if ((abs(x-h.x)/4)<100)
-          h.scaredCounter += 100-(abs(x-h.x)/4);
+        if ((abs(x-h.x)/4)<50)
+          h.scaredCounter += 50-(abs(x-h.x)/4);
       }
     }
   }
