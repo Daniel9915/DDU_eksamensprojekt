@@ -10,6 +10,10 @@ class Door extends Item {
     itemName = "Door";
   }
   
+  void display(){
+    //image(doorImage,x,y,w,h);
+  }
+  
   void displayHitbox(){
     if(isKeyDoor){
       push();
