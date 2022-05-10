@@ -1,2 +1,2 @@
 # DDU_eksamensprojekt
-Gruppe: Christopher Robin, Christopher Bik, Daniel, Zaid
+Gruppe: Christopher Pontoppidan Bik, Christopher Robin Heldgaard, Daniel Ahmadi og Zaid Sheikh
