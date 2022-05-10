@@ -7,7 +7,7 @@ class Chandelier extends Item {
     itemName = "Chandelier";
   }
   Chandelier(float _x, float _y) {
-    super(_x, _y, 50, 60, chandelier);
+    super(_x, _y, 60, 70, chandelier);
     itemName = "Chandelier";
   }
 
