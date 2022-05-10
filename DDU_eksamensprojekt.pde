@@ -15,7 +15,7 @@ PFont font;
 PImage ghostImg, pumpkinImg, chandelier, 
   vase, vase_broken, cup, cup_broken, glass, glass_broken, 
   noImg, BG, check, menu, menu2, button, house, stairsUp, stairsDown, grave, keyImg, tv, tv_broken1, tv_broken2, 
-  houseHitbox, scare1, scare2, scare3, doorImage, chair, table;
+  houseHitbox, scare1, scare2, scare3, doorSide, chair, table, doorSide2, doorOpen, doorOpen2;
 
 PImage tutorial1, tutorial2;
 
@@ -105,7 +105,10 @@ void loadData() {
   tv_broken2 = loadImage("data/images/tvStatic2.png");
   chair = loadImage("data/images/chair.png");
   table = loadImage("data/images/table.png");
-  //doorImage = loadImage("data/images/door.png");
+  doorSide = loadImage("data/images/doorSide.png");
+  doorOpen = loadImage("data/images/door.png");
+  doorOpen2 = loadImage("data/images/door2.png");
+  //doorSide2 = loadImage("data/images/doorSide2.png");
 
   for (int i = 0; i<16; i++) {
     if (i<8)

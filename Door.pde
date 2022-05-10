@@ -10,12 +10,17 @@ class Door extends Item {
   }
   
   void display(){
-    //image(doorImage,x,y,w,h);
-    push();
-    fill(0,0,255);
-    rect(x,y,w,h);
-    pop();
+    if(!coordinatesBox(GhostPumpkin.get(1).pLoc, x-(w*2),x+(w*2),y-h,y+h)){
+      image(doorSide,x,y,w,h);
+    }else{
+      push();
+      imageMode(CORNER);
+      image(doorOpen,x-w/2,y-h/2,w*4,h);
+      pop();
+    }
   }
+  
+  
   
   void displayHitbox(){
     push();
