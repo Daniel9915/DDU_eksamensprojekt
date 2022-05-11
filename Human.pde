@@ -13,6 +13,7 @@ class Human extends Game {
   float scaredCounter = 0;  
   float scaredMax = random(50, 200);
   float waitTime = 0;
+  int delay = int(random(18,30)*10);
 
   float attackRange = 40;
   boolean isInAttackRange = false;
@@ -128,7 +129,7 @@ class Human extends Game {
         x-= speed;
         if (x<leftWalk) {
           left = false;
-          waitTime = 240;
+          waitTime = delay;
         }
       } else {
         waitTime--;
@@ -145,7 +146,7 @@ class Human extends Game {
         x+= speed;
         if (x>rightWalk) {
           left = true;
-          waitTime = 240;
+          waitTime = delay;
         }
       } else {
         waitTime--;
