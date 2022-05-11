@@ -10,7 +10,11 @@ class Ghost extends Player {
   }
 
   void display() {
-    circle(buttomLoc.x, buttomLoc.y, 20);
+    push();
+    translate(buttomLoc.x, buttomLoc.y-20);
+    rotate((gLoc.x-buttomLoc.x)/20);
+    image(ghostFog,0,20,40,40);
+    pop();
     image(ghostImg, gLoc.x, gLoc.y, w, w*1.5);
   }
 

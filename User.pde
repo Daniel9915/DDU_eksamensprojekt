@@ -81,6 +81,7 @@ void logIn() {
             scene = 0;
           } else {
             error = "Incorrect Password";
+            return;
           }
         } else
           error = "User does not exist";
