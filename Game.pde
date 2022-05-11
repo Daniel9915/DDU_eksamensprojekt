@@ -14,6 +14,8 @@ class Game {
     //ItemList.add(new Chandelier(500, 500));
     //humanList.add(new Human(400, 650, 89, 180, 700, 900, 200, 0.7, humanImges.get(0)));
     tutorialShow = tutorial1;
+    music.loop();
+    music.amp(0.3);
   }
 
   void run() {
