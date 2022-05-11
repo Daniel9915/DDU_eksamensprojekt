@@ -50,7 +50,7 @@ class Item extends Game {
         return;
       }
     }
-    if (!broken) {
+    if (!broken && GhostPumpkin.get(0).isGhost) {
       pickedUp = true;
       x = GhostPumpkin.get(0).gLoc.x;
       y = GhostPumpkin.get(0).gLoc.y;
@@ -60,7 +60,7 @@ class Item extends Game {
   }
 
   void interact() {
-    if (interactDelay<frameCount) {
+    if (interactDelay<frameCount && GhostPumpkin.get(0).isGhost) {
       interactDelay = frameCount+60;
       pickedUp = true;
       velocity.set(10, -10);

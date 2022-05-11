@@ -3,6 +3,7 @@ import de.bezier.data.sql.*;
 
 SQLite Data;
 SoundFile music;
+SoundFile done;
 
 Game game = new Game();
 ArrayList<Player> GhostPumpkin = new ArrayList<Player>();
@@ -74,8 +75,9 @@ void draw() {
 void loadData() {
   font = createFont("data/FingerPaint-Regular.ttf", 128);
   textFont(font);
-  
+
   music = new SoundFile(this, "music.mp3");
+  done = new SoundFile(this, "done.mp3");
 
   Data = new SQLite( this, "Levels.sqlite" );
   ghostImg = loadImage("data/images/ghost.png");

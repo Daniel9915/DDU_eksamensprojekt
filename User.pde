@@ -77,6 +77,7 @@ void logIn() {
             for (int i = 0; i < Data.getInt("Completed"); i++) {
               levelsCompleted[i] = true;
             }
+            done.play();
             scene = 0;
           } else {
             error = "Incorrect Password";
@@ -99,5 +100,6 @@ void newUser(String name, String password) {
     Data.execute(sql);
   }
   scene = 0;
+  done.play();
   signedIn = true;
 }

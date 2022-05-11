@@ -33,6 +33,7 @@ class Key extends Item {
 
       if (abs(x-GhostPumpkin.get(1).pLoc.x)<w/2 && abs(y-GhostPumpkin.get(1).pLoc.y)<h/2) {
         keyCollected = true;
+        done.play();
       }
     }
   }
