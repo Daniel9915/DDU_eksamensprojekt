@@ -16,7 +16,8 @@ class Tabel extends Item {
     super.display();
     pop();
   }
-
+  void pickUp() {
+  }
   void interact() {
   }
   void shatter() {

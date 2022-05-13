@@ -91,10 +91,12 @@ class Stairs extends Item {
     float tempYTwo = 0;
     float tempXTwo = 0;
 
-    tempYOne = levelItems.get(arraySpotOne).y;
-    tempXOne = levelItems.get(arraySpotOne).x;
-    tempYTwo = levelItems.get(arraySpotTwo).y;
-    tempXTwo = levelItems.get(arraySpotTwo).x;
+    if (levelItems.size() != 0) {
+      tempYOne = levelItems.get(arraySpotOne).y;
+      tempXOne = levelItems.get(arraySpotOne).x;
+      tempYTwo = levelItems.get(arraySpotTwo).y;
+      tempXTwo = levelItems.get(arraySpotTwo).x;
+    }
 
     //tempYOne = bottom stairs
     if (tempYOne > tempYTwo) {

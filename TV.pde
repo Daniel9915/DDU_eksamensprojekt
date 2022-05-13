@@ -35,7 +35,8 @@ class Tv extends Item {
       }
     }
   }
-  
-  void shatter(){
+  void pickUp() {
+  }
+  void shatter() {
   }
 }
