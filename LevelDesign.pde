@@ -57,7 +57,7 @@ void levelDesignDraw() {
   }
 }
 
-void addNew() {
+void addNew() { // finder ud af hvad det er for et item man holder, og så tilføjes det item til level arrayListen
   if (allItems.get(item) instanceof Spawn) {
     levelItems.add(new Spawn(mouseX, mouseY));
     spawnSet = true;
@@ -93,14 +93,14 @@ void addNew() {
   } else if (allItems.get(item) instanceof Chair) {
     levelItems.add(new Chair(mouseX, mouseY));
   }
-  if ( Data.connect() ) {
+  if ( Data.connect() ) { // objektet bliver også tilføjet til databasen
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
     String sql = "INSERT INTO Level( ClassIndex, X, Y, LevelIndex)VALUES ('" + item + "', '" + mouseX + "', '" + mouseY + "', '" + currentLevelEdit + "');";
     Data.execute(sql);
   }
 }
 
-void itemText() {
+void itemText() { //viser bare tekst af hvad objektet er
   String temp = "";
   if (allItems.get(item) instanceof Spawn) {
     temp = "Spawn";

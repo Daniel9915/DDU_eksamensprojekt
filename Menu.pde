@@ -13,6 +13,10 @@ void menuDraw() {
   edit.display();
   if(!signedIn)
     signIn.display();
+  //fill(250,145,0);
+  fill(255,159,25);
+  textSize(60);
+  text("Spooky Spirit",width/2,150);
 }
 
 void levelSelect() {
