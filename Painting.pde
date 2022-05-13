@@ -1,13 +1,13 @@
 
-class Painting extends Item{
+class Painting extends Item {
   boolean on = false;
-  
+
   Painting(float _x, float _y, float _w, float _h, PImage _image) {
     super(_x, _y, _w, _h, _image);
     itemName = "Painting";
   }
   Painting(float _x, float _y) {
-    super(_x, _y, 100, 100, painting);
+    super(_x, _y, 100, 80, painting);
     itemName = "Painting";
     image2 = painting_broken;
   }
@@ -15,6 +15,7 @@ class Painting extends Item{
   void display() {
     push();
     translate(x, y-h/2);
+    rotate(angle);
     super.display();
     pop();
   }
@@ -22,6 +23,7 @@ class Painting extends Item{
     if (!on) {
       on = true;
       activeImage = image2;
+      angle = PI/30;
       for (Human h : game.humanList) { // jo tættere et menneske er på en genstand, jo mere bliver han skræmt. Hvis afstanden er mere end 400px så sker der ikke noget.
         if ((abs(x-h.x)/4)<50 && abs(y-h.y) <100) {
           h.scaredCounter += 50-(abs(x-h.x)/4);
@@ -33,7 +35,4 @@ class Painting extends Item{
   }
   void shatter() {
   }
-}
-  
-
 }

@@ -92,6 +92,8 @@ void addNew() { // finder ud af hvad det er for et item man holder, og så tilf�
     levelItems.add(new Tabel(mouseX, mouseY));
   } else if (allItems.get(item) instanceof Chair) {
     levelItems.add(new Chair(mouseX, mouseY));
+  } else if (allItems.get(item) instanceof Painting) {
+    levelItems.add(new Painting(mouseX, mouseY));
   }
   if ( Data.connect() ) { // objektet bliver også tilføjet til databasen
     Data.query( "SELECT ClassIndex, X, Y, LevelIndex FROM Level;" );
@@ -129,6 +131,8 @@ void itemText() { //viser bare tekst af hvad objektet er
     temp = "Table";
   } else if (allItems.get(item) instanceof Chair) {
     temp = "Chair";
+  } else if (allItems.get(item) instanceof Painting) {
+    temp = "Painting";
   }
   text(temp, mouseX, mouseY-50);
 }
@@ -151,6 +155,9 @@ void levelDesignKeys() {
   if (key == 'e') {
     item = 13;
   }
+  if (key == 'r') {
+    item = 14;
+  }
   if (keyCode == ENTER) {
     scene = 0;
   }
@@ -171,6 +178,7 @@ void addAllItems() {
   allItems.add(new KeyDoor(0, 0));
   allItems.add(new Tabel(0, 0));
   allItems.add(new Chair(0, 0));
+  allItems.add(new Painting(0, 0));
 }
 
 void loadLevel() {
@@ -221,11 +229,13 @@ void loadLevel() {
           levelItems.add(new Tabel(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==13) {
           levelItems.add(new Chair(Data.getInt("X"), Data.getInt("Y")));
+        } else if (Data.getInt("ClassIndex")==14) {
+          levelItems.add(new Painting(Data.getInt("X"), Data.getInt("Y")));
         } else if (Data.getInt("ClassIndex")==5) {
           if (scene == 3) {
             levelItems.add(new HumanPlace(Data.getInt("X"), Data.getInt("Y")));
           } else if (scene == 4) {
-            game.humanList.add(new Human(Data.getInt("X"), Data.getInt("Y"), 89, 180, Data.getInt("X")-100, Data.getInt("X")+100, 200, random(0.5,1), humanImges.get(0)));
+            game.humanList.add(new Human(Data.getInt("X"), Data.getInt("Y"), 89, 180, Data.getInt("X")-100, Data.getInt("X")+100, 200, random(0.5, 1), humanImges.get(0)));
           }
         }
       }
