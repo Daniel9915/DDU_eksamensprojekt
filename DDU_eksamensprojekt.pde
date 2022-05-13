@@ -156,7 +156,8 @@ void loadData() {
 }
 
 void keyPressed() {
-  game.tutorial = false;
+  if (scene == 4)
+    game.tutorial = false;
   game.keyPressed();
   if (scene == 3) {
     levelDesignKeys();
