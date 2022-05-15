@@ -124,7 +124,7 @@ class Human extends Game {
       imgIndex++;
     }
     if (left) {
-      humanImg = humanImges.get(imgIndex%7);
+      humanImg = humanImges.get(imgIndex%8);
       if (waitTime<0) {
         x-= speed;
         if (x<leftWalk) {
@@ -137,9 +137,9 @@ class Human extends Game {
       }
     }
     if (!left) {
-      humanImg = humanImgesH.get(imgIndex%7);
+      humanImg = humanImgesH.get(imgIndex%8);
       if (scaredCounter > scaredMax) {
-        humanImg = humanImgesRunH.get(imgIndex%6);
+        humanImg = humanImgesRunH.get(imgIndex%7);
         waitTime = -1;
       }
       if (waitTime<0) {
@@ -161,10 +161,10 @@ class Human extends Game {
     }
     if (GhostPumpkin.get(1).pLoc.x < x-5) {
       x-=runSpeed;
-      humanImg = humanImgesRun.get(imgIndex%6);
+      humanImg = humanImgesRun.get(imgIndex%7);
     } else if (GhostPumpkin.get(1).pLoc.x > x+5) {
       x+=runSpeed;
-      humanImg = humanImgesRunH.get(imgIndex%6);
+      humanImg = humanImgesRunH.get(imgIndex%7);
     }
   }
 }
